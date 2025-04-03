@@ -1,0 +1,19 @@
+<svg id="af956906-0fa5-4e04-b077-78127fba7c17" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 52 52">
+  <defs>
+    <style>
+      .a4fe228c-a14d-4f32-9bc7-a6e73895725a {
+        fill: none;
+      }
+
+      .a25de810-31d4-43c6-beb8-51f4783da432 {
+        clip-path: url(#e2f87efb-3302-4d3a-91a7-94b94903a56e);
+      }
+    </style>
+    <clipPath id="e2f87efb-3302-4d3a-91a7-94b94903a56e" transform="translate(-2133.5 -68)">
+      <circle class="a4fe228c-a14d-4f32-9bc7-a6e73895725a" cx="2159.5" cy="94" r="26"/>
+    </clipPath>
+  </defs>
+  <g class="a25de810-31d4-43c6-beb8-51f4783da432">
+    <image width="1024" height="1024" transform="scale(0.05)" xlink:href="IMG-20221128-WA0022.jpeg"/>
+  </g>
+</svg>

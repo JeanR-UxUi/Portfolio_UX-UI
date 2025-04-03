@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none
 }
 
 html, 
@@ -10,7 +12,141 @@ body{
     font-size: 16px;
 }
 
-section.header{
+/* NAVBAR */
+.navbar {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0 1.5rem;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.navbar .nav-links ul li.active a {
+    color: #00A6F4;
+    text-shadow: 0 0 1.5rem oklch(14.1% 0.005 285.823 / 0.9);
+    font-weight: 800;
+}
+
+/* Icône du menu hamburger */
+.menu-hamburger {
+    display: none;
+    font-size: 2em;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: white;
+    background-color: oklch(21% 0.006 285.885/ 0.6);
+    border-radius: 0.5em;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gestion du menu responsive */
+@media screen and (max-width: 900px) {
+    .menu-hamburger {
+        display: flex; /* Affiche l’icône hamburger en mode mobile */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%); /* Caché par défaut */
+        transition: transform 0.3s ease-in-out;
+        background-color: oklch(21% 0.006 285.885/ 0.8);
+        backdrop-filter: blur(0.25em);
+    }
+
+    .nav-links ul {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .nav-links ul li {
+        margin: 1.5rem 0;
+    }
+
+    /* Classe activée par le JS pour afficher le menu */
+    .nav-links.mobile-menu {
+        transform: translateX(0%);
+    }
+}
+
+
+/* ONGLET SIDE */
+
+.onglet-side {
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2em;
+    z-index: 12;
+}
+.onglet-side a {
+    height: 0.75rem;
+    width: 0.75rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    border: 3px solid #0084D1;
+    border-radius: 2em;
+}
+.onglet-side a.active {
+    background-color: #0084D1;
+}
+
+/* Gestion du menu responsive */
+@media screen and (max-width: 900px) {
+    .onglet-side {
+        display: none;
+    }
+}
+
+/* BOUTON DARK MODE */
+
+
+/* HEADER */
+
+section.header {
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -21,7 +157,7 @@ section.header{
     overflow: hidden;
 }
 
-.banner{
+.banner {
     z-index: 2;
     position: absolute;
     top: 35%;
@@ -30,13 +166,13 @@ section.header{
     transition: transform 300ms ease-out, opacity 300ms ease;; /* Rend le mouvement fluide */
 }
 
-section.header h1{
+section.header h1 {
     font-size: 8vw;
     color: white;
 }
 
-/* Fond étoilé */
-section.header::before{
+    /* Fond étoilé */
+section.header::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -48,8 +184,8 @@ section.header::before{
     z-index: 1;
 }
 
-/* Premier plan (sol & montgnes) */
-section.header::after{
+    /* Premier plan (sol & montgnes) */
+section.header::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -64,39 +200,39 @@ section.header::after{
 
 /*  GENERAL "  */
 
-section{
+section {
     width: 80vw;
     height: 100%;
-    padding: 100px 0;
+    padding: 52px 0;
     margin: 0 auto;
 }
 
-h1{
+h1 {
     font-size: 2.5em;
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
-h2{
+h2 {
     font-size: 1.5em;
     color: black;
     margin-bottom: 1.5rem;
 }
-h3{
+h3 {
     font-size: 1.25em;
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
-h4{
+h4 {
     font-size: 1em;
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
-p{
+p {
     font-size: 1em;
     margin-bottom: 1rem;  
 }
 
-button{
+button {
     padding: 1rem 2rem;
     background-color: #00A6F4;
     border: none;
@@ -106,7 +242,7 @@ button{
     color: white;
 }
 
-.button{
+.button {
     padding: 1rem 2rem;
     margin-bottom: 1rem;
     background-color: #00A6F4;
@@ -116,26 +252,26 @@ button{
     font-weight: bold;
     color: white;
 }
-.button:hover{
+.button:hover {
     background-color: #0084D1;
     box-shadow: 0 0 0.5rem #D4D4D8;
 }
 
-.button a{
+.button a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
     color: white;
 }
-.button i{
+.button i {
     margin-left: 0.5em;
 }
 
 
 /*  " Qui sui-je? "  */
 
-#personnal_quote{
-    padding: 100px 1.5rem;
+.personnal_quote {
+    padding: 80px 1.5rem;
     display: flex;
     flex-flow: wrap;
     align-items: center;
@@ -143,26 +279,26 @@ button{
     gap: 2.5rem;
 }
 
-#personnal_photo{
+#personnal_photo {
     width: 300px;
     flex-shrink: 0;
 }
 
-#personnal_text{
+#personnal_text {
     min-width: 300px;
     flex-grow: 1;
     flex-basis: 0;
 }
 
-.intro_bold{
+.intro_bold {
     font-weight: 600;
 }
-.grey_i{
+.grey_i {
     color: #9F9FA9;
     font-style: italic;
 }
 
-#personnal_photo img{
+#personnal_photo img {
     width: 100%;
     height: auto;
 }
@@ -174,7 +310,7 @@ button{
     gap: 0.5rem;
 }
 
-.tag{
+.tag {
     display: inline-block;
     padding: 0.5rem 0.75rem;
     margin: 0.25rem;
@@ -184,11 +320,12 @@ button{
     border-radius: 2rem;
     transition: 300ms;
 }
-.tag:hover{
+.tag:hover {
     background-color: #9F9FA9;
     box-shadow: 0px 0px 5px #52525C;
 }
-/* Mode mobile : La photo passe au centre et le texte en dessous */
+
+    /* Mode mobile : La photo passe au centre et le texte en dessous */
 @media screen and (max-width: 700px) {
     #personnal_quote {
         flex-direction: column;
@@ -212,16 +349,16 @@ button{
 
 /* MIDDLE */
 
-.section.mid{
+.section.mid {
     width: 80vw;
     margin: 0 auto;
 }
 
-section.mid .titre h1{
+section.mid .titre h1 {
     text-align: center;
 }
 
-/* Ajustements Responsive */
+    /* Ajustements Responsive */
 @media (max-width: 900px) {
     .section.mid {
         width: 90vw; /* On peut élargir la grille si besoin */
@@ -238,7 +375,7 @@ section.mid .titre h1{
 
 /* Cartes de la Section PROJETS*/
 
-.container{
+.container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
     gap: 2.5rem;
@@ -246,7 +383,7 @@ section.mid .titre h1{
     justify-content: center;
 }
 
-.card{
+.card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -259,39 +396,40 @@ section.mid .titre h1{
     box-shadow: 4px 4px 4px #D4D4D8;
     transition: 300ms;
 }
-.card:hover{
+.card:hover {
     background-color: #D4D4D8;
     box-shadow: 8px 8px 8px #9F9FA9;
 }
-.card img{
+.card img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 24px;
 }
-.card button{
+.card button {
     margin-top: auto;
     align-self: flex-end;
 }
 
 @media (max-width: 600px) {
-    .container{
+    .container {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 }
 
+
 /* Cartes de la Section RESEAUX SOCIAUX */
 
-.container_social_logo{
+.container_social_logo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2.5rem;
     align-items: stretch;
     justify-content: center;
 }
-.container_social_logo .card{
+.container_social_logo .card {
     align-items: center;
 }
-.container_social_logo img{
+.container_social_logo img {
     width: 200px;
     height: auto;
     margin-bottom: 1.5rem;
@@ -300,22 +438,22 @@ section.mid .titre h1{
 
 /* Cartes de la Section COMPETENCES*/
 
-.grid_container{
+.grid_container {
     display: grid;
     grid-template-columns: repeat(2, minmax(400px, 1fr));
     gap: 2.5rem;
     grid-auto-flow: dense;
 }
 
-@media (max-width: 900px){
-    .grid_container{
+@media (max-width: 900px) {
+    .grid_container {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 }
 
-.card_fix{
+.card_fix {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -326,7 +464,7 @@ section.mid .titre h1{
     box-sizing: border-box;
     box-shadow: 4px 4px 4px #D4D4D8;
 }
-.card_fix h2{
+.card_fix h2 {
     font-size: 2em;
     align-self: center;
     margin-bottom: 2em;
@@ -402,7 +540,7 @@ section.mid .titre h1{
     white-space: nowrap;
     transition: 300ms;
 }
-.badge:hover{
+.badge:hover {
     background-color: #9F9FA9;
     box-shadow: 0px 0px 5px #52525C;
 } 
@@ -433,7 +571,7 @@ section.mid .titre h1{
 
 /* Mini-Cartes de la Section SOFTWARE */
 
-.container_software_card{
+.container_software_card {
     display: grid;
     padding: 0.5rem;
     gap: 1.5rem;
@@ -443,7 +581,7 @@ section.mid .titre h1{
     margin-bottom: 2rem;
 }
 
-.card_software{
+.card_software {
     box-sizing: border-box;
     width: 100%;
     display: flex;
@@ -456,11 +594,11 @@ section.mid .titre h1{
     background-color: #D4D4D8;
 }
 
-.card_software img{
+.card_software img {
     height: 80px;
     margin-bottom: 1rem;
 }
-.card_software h4{
+.card_software h4 {
     margin-bottom: 0;
 }
 
@@ -468,15 +606,16 @@ section.mid .titre h1{
 
 /* FOOTER */
 
-.footer{
+.footer {
     height: auto;
     width: 100vw;
     margin: 0 auto;
+    margin-top: 2em;
     padding: 0;
     position: relative;
 }
 
-.footer::before{
+.footer::before {
     content: "";
     position: absolute;
     width: 100vw;
@@ -487,16 +626,16 @@ section.mid .titre h1{
     z-index: -1;
 }
 
-#footer_width{
+#footer_width {
     width: 80vw;
     margin: 0 auto;
     padding: 2rem 2rem 6rem 2rem;
 }
-.footer h1{
+.footer h1 {
     color: white;
 }
 
-#contact_grid{
+#contact_grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2.5rem;
@@ -504,8 +643,8 @@ section.mid .titre h1{
     justify-content: center;
     grid-auto-flow: dense;
 }
-@media (max-width: 900px){
-    .grid_container{
+@media (max-width: 900px) {
+    .grid_container {
         grid-template-columns: repeat(1, minmax(300px, 1fr));
     }
 }
@@ -525,7 +664,7 @@ section.mid .titre h1{
     box-shadow: 4px 4px 4px #D4D4D8;
 }
 
-.remerciements img{
+.remerciements img {
     width: 120px;
     border-radius: 100%;
     align-self: center;
@@ -549,19 +688,9 @@ section.mid .titre h1{
     box-sizing: border-box;
     box-shadow: 4px 4px 4px #D4D4D8;
 }
-.interagir h2{
+.interagir h2 {
     color: white;
 }
-.interagir button{
+.interagir button {
     margin-bottom: 1.5rem;
 }
-
-
-
-/*
-.card{
-    position: relative;
-    justify-content: space-between;
-
-}
-*/
