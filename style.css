@@ -242,29 +242,33 @@ button {
     color: white;
 }
 
-.button {
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 1rem 2rem;
-    margin-bottom: 1rem;
-    background-color: #00A6F4;
     border: none;
     border-radius: 1rem;
     font-size: 1rem;
     font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Bouton principal */
+.btn-primary {
+    background-color: #00A6F4;
     color: white;
 }
-.button:hover {
+.btn-primary:hover {
     background-color: #0084D1;
     box-shadow: 0 0 0.5rem #D4D4D8;
 }
 
-.button a {
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-}
-.button i {
-    margin-left: 0.5em;
+/* Icône dans le bouton */
+.btn i {
+    margin-left: 1em;
 }
 
 
