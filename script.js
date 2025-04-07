@@ -181,3 +181,18 @@ function openMailInNewTab(event) {
         newTab.location.href = mailtoLink;
     }, 500);
 }
+
+// ========================
+// ✅ 5. MAILTO ALTERNATIVE : copier automatiquement l'adresse mail dans le presse-papier
+// ========================
+function copyEmail() {
+    const email = "jeanrouyer24@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+      const feedback = document.getElementById("copy-feedback");
+      feedback.innerText = "Adresse mail copiée dans le presse-papiers ✔️";
+      feedback.classList.remove("sr-only");
+      setTimeout(() => {
+        feedback.classList.add("sr-only");
+      }, 2000);
+    });
+  }

@@ -431,8 +431,12 @@
                     <a href="mailto:jeanrouyer24@gmail.com?subject=Visite%20de%20votre%20site&body=Bonjour%20Jean,%0D%0AJ%27ai%20visité%20votre%20site%20et%20je%20me%20permets%20de%20vous%20contacter%20concernant..." class="btn btn-primary" onclick="openMailInNewTab(event)">
                         Me contacter par mail<i class="fa-solid fa-paper-plane"></i>
                     </a>
-                    <p><i>jeanrouyer24@gmail.com</i></p>
-                    <p><i>Prenez contact par mail pour toute demande de renseignements, ou toute réflexion sur votre projet</i></p>
+                    <div class="copy-info" onclick="copyEmail()">
+                        <span id="email-text">jeanrouyer24@gmail.com</span>
+                        <i class="fa-solid fa-copy" aria-hidden="true"></i>
+                      </div>
+                      <span id="copy-feedback" class="sr-only">Adresse mail copiée</span>
+                    <p><i>Prenez contact par mail pour toute demande de renseignements, ou toute réflexion sur votre projet.</i></p>
                 </div>
             </div>
         </div>

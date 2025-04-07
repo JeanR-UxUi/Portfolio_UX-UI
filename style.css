@@ -698,3 +698,38 @@ section.mid .titre h1 {
 .interagir button {
     margin-bottom: 1.5rem;
 }
+
+/* copie adresse dans le presse papier */
+.copy-info {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: #00A6F4; /* Couleur correspondante à ton design */
+  }
+  
+  .copy-info i {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .copy-info:hover {
+    text-decoration: underline;
+  }
+  
+  #copy-feedback {
+    margin-top: 0.5rem;
+    color: green;
+    font-size: 0.9rem;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
