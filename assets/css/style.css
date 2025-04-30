@@ -4,12 +4,16 @@
     scroll-behavior: smooth;
     text-decoration: none;
     list-style: none
+
+    
 }
 
 html, 
 body{
     font-family: 'Montserrat';
     font-size: 16px;
+    --main-color-site: #00A6F4; 
+    --secondary-color-site: #0084D1; 
 }
 
 /* NAVBAR */
@@ -47,7 +51,7 @@ body{
 }
 
 .navbar .nav-links ul li.active a {
-    color: #00A6F4;
+    color: var(--main-color-site);
     text-shadow: 0 0 1.5rem oklch(14.1% 0.005 285.823 / 0.9);
     font-weight: 800;
 }
@@ -127,11 +131,11 @@ body{
     width: 0.75rem;
     margin: 0.5rem 0;
     background-color: white;
-    border: 3px solid #0084D1;
+    border: 3px solid var(--secondary-color-site);
     border-radius: 2em;
 }
 .onglet-side a.active {
-    background-color: #0084D1;
+    background-color: var(--secondary-color-site);
 }
 
 /* Gestion du menu responsive */
@@ -177,7 +181,7 @@ section.header::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(img/SkyDrawing.png);
+    background-image: url(/img/SkyDrawing.png);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -190,7 +194,11 @@ section.header::after {
     position: absolute;
     width: 100%;
     height: 100%;
+<<<<<<< HEAD:style.css
     background-image: url(img/GroundDrawing_Vegetal.png);
+=======
+    background-image: url(/img/GroundDrawing_Vegetal.png);
+>>>>>>> PagesProjets:assets/css/style.css
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -228,13 +236,12 @@ h4 {
     margin-bottom: 1rem;
 }
 p {
-    font-size: 1em;
-    margin-bottom: 1rem;  
+    font-size: 1em;  
 }
 
 button {
     padding: 1rem 2rem;
-    background-color: #00A6F4;
+    background-color: var(--main-color-site);
     border: none;
     border-radius: 1rem;
     font-size: 1rem;
@@ -246,6 +253,7 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-top: 1.5rem;
     padding: 1rem 2rem;
     border: none;
     border-radius: 1rem;
@@ -258,11 +266,21 @@ button {
 
 /* Bouton principal */
 .btn-primary {
-    background-color: #00A6F4;
+    background-color: var(--main-color-site);
     color: white;
 }
 .btn-primary:hover {
-    background-color: #0084D1;
+    background-color: var(--secondary-color-site);
+    box-shadow: 0 0 0.5rem #D4D4D8;
+}
+
+/* Bouton principal */
+.btn-secondary {
+    background-color: #09090B;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #27272A;
     box-shadow: 0 0 0.5rem #D4D4D8;
 }
 
@@ -312,9 +330,10 @@ button {
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 0.5rem;
+    margin-top: 1.5rem;
 }
 
-.tag {
+.tag_primary {
     display: inline-block;
     padding: 0.5rem 0.75rem;
     margin: 0.25rem;
@@ -324,8 +343,23 @@ button {
     border-radius: 2rem;
     transition: 300ms;
 }
-.tag:hover {
+.tag_primary:hover {
     background-color: #9F9FA9;
+    box-shadow: 0px 0px 5px #52525C;
+}
+.tag_secondary{
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem;
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    border: 0.25rem #D4D4D8;
+    border-radius: 2rem;
+    transition: 300ms;
+}
+.tag_secondary:hover {
+    background-color: #FAFAFA;
     box-shadow: 0px 0px 5px #52525C;
 }
 
@@ -346,7 +380,7 @@ button {
     }
 
     .tag_bar {
-        justify-content: center;
+            justify-content: center;
     }
 }
 
@@ -400,10 +434,7 @@ section.mid .titre h1 {
     box-shadow: 4px 4px 4px #D4D4D8;
     transition: 300ms;
 }
-.card:hover {
-    background-color: #D4D4D8;
-    box-shadow: 8px 8px 8px #9F9FA9;
-}
+
 .card img {
     width: 100%;
     border-radius: 8px;
@@ -549,6 +580,21 @@ section.mid .titre h1 {
     box-shadow: 0px 0px 5px #52525C;
 } 
 
+.badge_secondary {
+    padding: 0.5rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    border: 0.25rem #9F9FA9;
+    white-space: nowrap;
+    transition: 300ms;
+}
+.badge_secondary:hover {
+    background-color: #FAFAFA;
+    box-shadow: 0px 0px 5px #52525C;
+} 
+
 
 /*
 .read-more-badge_btn {
@@ -624,7 +670,7 @@ section.mid .titre h1 {
     position: absolute;
     width: 100vw;
     height: 100%;
-    background-image: url(img/SkyDrawing.png);
+    background-image: url(/img/SkyDrawing.png);
     background-size: cover;
     background-position: top;
     z-index: -1;
@@ -706,7 +752,7 @@ section.mid .titre h1 {
     margin-top: 1rem;
     margin-bottom: 1rem;
     cursor: pointer;
-    color: #00A6F4; /* Couleur correspondante à ton design */
+    color: var(--main-color-site); /* Couleur correspondante à ton design */
   }
   
   .copy-info i {
