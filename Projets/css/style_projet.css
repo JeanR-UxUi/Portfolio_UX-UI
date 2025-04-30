@@ -165,7 +165,7 @@ section.header {
     left: 0;
     height: 50vh;
     width: 100vw;
-    background-image: url(../img/SkyDrawing.png);
+    background-image: url(.../img/SkyDrawing.png);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -953,7 +953,7 @@ body.modal-open {
     position: absolute;
     width: 100vw;
     height: 100%;
-    background-image: url(../img/SkyDrawing.png);
+    background-image: url(.../img/SkyDrawing.png);
     background-size: cover;
     background-position: top;
     z-index: -1;
