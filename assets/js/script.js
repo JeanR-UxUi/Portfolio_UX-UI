@@ -95,80 +95,25 @@ window.addEventListener("scroll", () => {
 // ✅ 4. BADGES : Voir plus / Voir moins
 // ========================
 document.addEventListener("DOMContentLoaded", function () {
-    const badgeContainers = document.querySelectorAll(".badges-container");
-
-    badgeContainers.forEach(container => {
-        const badgesWrapper = container.querySelector(".badges-wrapper");
-        const badges = Array.from(badgesWrapper.querySelectorAll(".badge"));
-        const readMoreBtn = container.querySelector(".read-more-badge_btn");
-
-        const maxVisibleLines = 2;
-        let isExpanded = false;
-        let initialBadgesOnTwoLines = 0;
-
-        const updateButtonText = () => {
-            const hiddenCount = badges.length - (isExpanded ? badges.length : initialBadgesOnTwoLines);
-            readMoreBtn.textContent = isExpanded ? "Voir moins" : `+ ${hiddenCount} autres`;
-        };
-
-        const toggleBadges = () => {
-            isExpanded = !isExpanded;
-            badgesWrapper.classList.toggle("expanded", isExpanded);
-            badges.forEach((badge, index) => {
-                badge.style.display = (!isExpanded && index >= initialBadgesOnTwoLines) ? "none" : "inline-block";
-            });
-            updateButtonText();
-        };
-
-        const calculateInitialVisibility = () => {
-            badges.forEach(badge => (badge.style.display = "inline-block"));
-            initialBadgesOnTwoLines = 0;
-            let visibleLines = 0;
-            let currentLineWidth = 0;
-            const badgeStyle = getComputedStyle(badges[0]);
-            const badgeMarginRight = parseFloat(badgeStyle.marginRight);
-
-            for (let i = 0; i < badges.length; i++) {
-                const badge = badges[i];
-                const badgeWidth = badge.offsetWidth + badgeMarginRight;
-
-                if (visibleLines < maxVisibleLines) {
-                    if (currentLineWidth + badgeWidth <= badgesWrapper.offsetWidth || currentLineWidth === 0) {
-                        currentLineWidth += badgeWidth;
-                        initialBadgesOnTwoLines++;
-                    } else {
-                        visibleLines++;
-                        currentLineWidth = badgeWidth;
-                        if (visibleLines < maxVisibleLines) {
-                            initialBadgesOnTwoLines++;
-                        } else {
-                            break;
-                        }
-                    }
-                } else {
-                    break;
-                }
-            }
-
-            badges.forEach((badge, index) => {
-                if (index >= initialBadgesOnTwoLines) {
-                    badge.style.display = "none";
-                }
-            });
-
-            if (badges.length > initialBadgesOnTwoLines) {
-                readMoreBtn.style.display = "block";
-                updateButtonText();
-                readMoreBtn.addEventListener("click", toggleBadges);
-            } else {
-                readMoreBtn.style.display = "none";
-            }
-        };
-
-        calculateInitialVisibility();
-        window.addEventListener("resize", calculateInitialVisibility);
+    document.querySelectorAll('.badges-container').forEach(container => {
+      const wrapper = container.querySelector('.badges-wrapper');
+      const badges = wrapper.querySelectorAll('.badge_secondary');
+      const button = container.querySelector('.show-more');
+  
+      if (badges.length > 0) {
+        button.textContent = `+${badges.length} autres`;
+        button.addEventListener('click', () => {
+          badges.forEach(badge => badge.classList.toggle('visible'));
+  
+          const isExpanded = button.classList.toggle('expanded');
+          button.textContent = isExpanded ? 'Voir moins' : `+${badges.length} autres`;
+        });
+      } else {
+        button.style.display = 'none';
+      }
     });
 });
+
 
 // ========================
 // ✅ 5. MAILTO : Ouvre un mail dans un nouvel onglet
