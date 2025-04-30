@@ -802,6 +802,29 @@ body.modal-open {
     font-size: 0.9rem;
 }
 
+.menu-item label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.75rem;
+    transition: background-color 0.2s;
+}
+  
+.menu-item label:hover {
+    background-color: #f0f0f0;
+}
+  
+.menu-item input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: #6366F1; /* violet clair par défaut */
+    cursor: pointer;
+}
+  
+  
+
 
 /*  WIREFRAME */
 .gallery {
