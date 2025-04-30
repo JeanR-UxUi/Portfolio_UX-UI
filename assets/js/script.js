@@ -99,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const wrapper = container.querySelector('.badges-wrapper');
       const badges = wrapper.querySelectorAll('.badge_secondary');
       const button = container.querySelector('.show-more');
+
+      if (!button) return; // ← empêche l’erreur si le bouton n'existe pas
   
       if (badges.length > 0) {
         button.textContent = `+${badges.length} autres`;
