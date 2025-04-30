@@ -1,0 +1,263 @@
+// ========================
+// ✅ 1. PADDING TOP : CENTRER VERTICALEMENT L'IMAGE DU PROJET
+// ========================
+function centerCard() {
+    const card = document.querySelector('.banner_projets');
+    const hero = document.querySelector('.header');
+    if (!card || !hero) return;
+  
+    const cardHeight = card.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const offset = (viewportHeight - cardHeight) / 2;
+  
+    hero.style.paddingTop = `${Math.max(offset, 0)}px`;
+  }
+  
+  window.addEventListener('load', centerCard);
+  window.addEventListener('resize', centerCard);
+
+
+
+// ========================
+// ✅ 2. ANIMATION TIME GRAPH
+// ========================
+document.addEventListener("DOMContentLoaded", () => {
+    const barsSection = document.querySelector(".time-bars");
+    const bars = barsSection.querySelectorAll(".bar-fill");
+    const max = barsSection.getAttribute("data-max") || 15;
+  
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            bars.forEach((bar) => {
+              const value = bar.getAttribute("data-value");
+              const percentage = (value / max) * 100;
+              bar.style.width = percentage + "%";
+            });
+          } else {
+            bars.forEach((bar) => {
+              bar.style.width = "0%";
+            });
+          }
+        });
+      },
+      { threshold: 0.8 }
+    );
+  
+    if (barsSection) {
+      observer.observe(barsSection);
+    }
+});
+
+
+
+// ========================
+// ✅ 3. DESCRIPTION DEROULANTE : PAIN POINT CARD
+// ========================
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('#pain_points .card');
+  
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('active');
+      });
+  
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('active');
+        }
+      });
+    });
+});
+
+
+
+
+// ========================
+// ✅ 4. ZOOM SCHEMA
+// ========================
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const zoomContainer = document.getElementById("zoomContainer");
+    const zoomImg = document.getElementById("zoomImg");
+    const miniMap = document.getElementById("miniMap");
+    const miniMapImg = document.getElementById("miniMapImg");
+    const viewRectangle = document.getElementById("viewRectangle");
+
+    let scale = 1;
+    let translate = { x: 0, y: 0 };
+    let isDragging = false;
+    let start = { x: 0, y: 0 };
+    let naturalWidth, naturalHeight;
+
+    openModal.addEventListener("click", () => {
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      scale = 1;
+      translate = { x: 0, y: 0 };
+      zoomImg.onload = () => {
+        naturalWidth = zoomImg.naturalWidth;
+        naturalHeight = zoomImg.naturalHeight;
+        const aspectRatio = naturalWidth / naturalHeight;
+        miniMap.style.width = "200px";
+        miniMap.style.height = `${200 / aspectRatio}px`;
+        updateTransform();
+      };
+      if (zoomImg.complete) {
+        zoomImg.onload();
+      }
+      updateTransform();
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    });
+
+    zoomContainer.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const delta = e.deltaY < 0 ? 0.1 : -0.1;
+      const rect = zoomImg.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+      const zoomFactor = 1 + delta;
+
+      const oldScale = scale;
+      scale *= zoomFactor;
+      scale = Math.max(0.05, Math.min(scale, 6));
+
+      translate.x -= offsetX * (scale / oldScale - 1);
+      translate.y -= offsetY * (scale / oldScale - 1);
+
+      updateTransform();
+    });
+
+    zoomContainer.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      start = { x: e.clientX, y: e.clientY };
+      zoomContainer.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      zoomContainer.style.cursor = "grab";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - start.x;
+      const dy = e.clientY - start.y;
+      translate.x += dx;
+      translate.y += dy;
+      start = { x: e.clientX, y: e.clientY };
+      updateTransform();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      const step = 20;
+      switch (e.key) {
+        case "ArrowLeft":
+          translate.x += step;
+          break;
+        case "ArrowRight":
+          translate.x -= step;
+          break;
+        case "ArrowUp":
+          translate.y += step;
+          break;
+        case "ArrowDown":
+          translate.y -= step;
+          break;
+        default:
+          return;
+      }
+      updateTransform();
+      e.preventDefault();
+    });
+
+    function updateTransform() {
+      zoomImg.style.transform = `translate(${translate.x}px, ${translate.y}px) scale(${scale})`;
+      updateMiniMap();
+    }
+
+    function updateMiniMap() {
+      const containerRect = zoomContainer.getBoundingClientRect();
+      const imgWidth = naturalWidth * scale;
+      const imgHeight = naturalHeight * scale;
+      const viewWidth = containerRect.width;
+      const viewHeight = containerRect.height;
+
+      const miniMapWidth = miniMap.clientWidth;
+      const miniMapHeight = miniMap.clientHeight;
+
+      const visibleRatioX = viewWidth / imgWidth;
+      const visibleRatioY = viewHeight / imgHeight;
+
+      const offsetX = -translate.x / imgWidth * miniMapWidth;
+      const offsetY = -translate.y / imgHeight * miniMapHeight;
+
+      const rectWidth = Math.min(visibleRatioX * miniMapWidth, miniMapWidth);
+      const rectHeight = Math.min(visibleRatioY * miniMapHeight, miniMapHeight);
+
+      viewRectangle.style.width = `${rectWidth}px`;
+      viewRectangle.style.height = `${rectHeight}px`;
+
+      viewRectangle.style.left = `${Math.max(0, Math.min(offsetX, miniMapWidth - rectWidth))}px`;
+      viewRectangle.style.top = `${Math.max(0, Math.min(offsetY, miniMapHeight - rectHeight))}px`;
+    }
+});
+
+
+
+// ========================
+// ✅ 5. MENU DEROULANT : ARCHITECTURE DE L'INFO
+// ========================
+function toggleMenu(element) {
+    const submenu = element.nextElementSibling;
+    const icon = element.querySelector('i');
+
+    if (!submenu || !icon) return;
+
+    if (submenu.style.display === 'block') {
+      submenu.style.display = 'none';
+      icon.classList.remove('fa-chevron-up');
+      icon.classList.add('fa-chevron-down');
+    } else {
+      submenu.style.display = 'block';
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-up');
+    }
+};
+
+
+
+// ========================
+// ✅ 6. GALERIE D'IMAGES : avec miniature cliquable
+// ========================
+function changeImage(index) {
+  const mainImg = document.getElementById('mainWireframe');
+  mainImg.src = `/img/Amazon-Wireframe_mid-fi_${index}.jpg`;
+  mainImg.alt = `Wireframe ${index}`;
+}
+
+
+
+// ========================
+// ✅ 7. TEXT COLLAPSE
+// ========================
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.read-more');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const collapse = button.previousElementSibling; // cherche l'élément juste avant : .text-collapse
+      const expanded = collapse.classList.toggle('expanded');
+      button.textContent = expanded ? 'Lire moins' : 'Lire plus';
+      button.setAttribute('aria-expanded', expanded);
+    });
+  });
+});

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Rouyer - Portfolio - Projet Amazon</title>
+    <link rel="icon" type="image/png" href="img/JeanRouyer_AvatarIcon_52px.png">
+
+    <!-- CUSTOM CSS-->
+    <link rel="stylesheet" href="/Projets/css/style_projet.css">
+
+
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+    <!-- Javascript-->
+    <script src="/assets/js/script.js"></script>
+    <script src="/Projets/js/script_projet.js"></script>
+
+    <!-- Panzoom-->
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
+
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/fbf2ab3170.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body id="amazon">
+    <nav class="navbar">
+        <a href="../../index.html" class="logo"> Jean Rouyer</a>
+        <div class="nav-links">
+            <ul>
+                <li class="active"><a href="../../index.html">Accueil</a></li>
+                <li><a href="../../index.html#projets">Projets</a></li>
+                <li><a href="../../index.html#competences">Compétences & outils</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="menu-hamburger"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+
+
+    <section class="header">
+        <div class="header_background"></div>
+
+        <div class="banner_projets">
+            <img src="/img/Couverture_projet_Amazon.jpg" alt="">
+        </div>
+
+        <h1>Audit ergonomique & Refonte d'Amazon</h1>     
+    </section>
+
+
+    <section id="intro">
+        <div class="intro_container">
+            <div class="intro_text">
+                <p>En tant qu’UX Designer, il est pour moi essentiel d’être capable d’évaluer concrètement une interface existante, afin d’identifier "Pain Points" (points de frictions en français) dans l’expérience utilisateur. Mon objectif est alors de proposer des solutions efficaces et réalistes pour améliorer l’ergonomie et la satisfaction des utilisateurs.</p>
+                <p>Dans ce projet, j’ai entrepris une analyse approfondie de l’interface d’Amazon, un géant du e&#8209;commerce utilisé quotidiennement par des millions d’utilisateurs à travers le monde. Bien que la plateforme soit reconnue pour son efficacité et sa richesse fonctionnelle, j’ai identifié des axes d’amélioration pour optimiser l’expérience utilisateur et renforcer son accessibilité.<br>À partir des observations recueillies, j’ai élaboré des propositions d’amélioration visant à simplifier la navigation, clarifier certaines interactions, et offrir une expérience plus fluide et intuitive.</p>
+                <p>Mon approche UX est méthodique : analyser, diagnostiquer et proposer des solutions concrètes pour répondre aux besoins des utilisateurs, tout en respectant les objectifs business de la plateforme.</p>
+            </div>
+        
+            <div class="intro_tag">
+                <p><strong>Mots clés liés à ce projet :</strong></p>
+                <div class="tag_bar">
+                    <span class="tag_primary">Design Thinking</span>
+                    <span class="tag_primary">Heuristiques de Bastien & Scapin</span>
+                    <span class="tag_primary">Ergonomie Web</span>
+                    <span class="tag_primary">Architecture de l'information</span>
+                    <span class="tag_primary">UX writing</span>
+                    <span class="tag_primary">UX/UI Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contexte" class="box-section">
+        <h2>Contexte du projet</h2>
+        <div>
+            <ul class="container">
+                <div class="card"><li><h3>Période : </h3><p>Septembre 2024 - Novembre 2024</p></li></div>
+                <div class="card"><li><h3>Client : </h3><p>(Fictif) Amazon France</p></li></div>
+                <div class="card"><li><h3>Collaborateurs : </h3><p> Aucun (projet auto-initié)</p></li></div>
+            </ul>
+        </div>
+        <div class="time-bars" data-max="12">
+            <h3>Temps passé par tâche</h3>
+            <div class="time-bar">
+                <div class="time-bar-label">Création de la grille d'audit</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="5"></div>
+                </div>
+                <div class="time-value">5h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Audit ergonomique</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="10"></div>
+                </div>
+                <div class="time-value">10h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Analyse des incohérences</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="5"></div>
+                </div>
+                <div class="time-value">5h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Nouvelle architecture de l’information</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="3"></div>
+                </div>
+                <div class="time-value">3h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">A/B testing (estimation)</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="7"></div>
+                </div>
+                <div class="time-value">7h</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pain_points" class="box-section">
+        <h2>Les "Pain Points"</h2>
+        <div class="container">
+            <div class="card" tabindex="0">
+                <h4>Interface visuellement trop chargée</h4>
+                <div class="description">
+                    <p>L’abondance d’éléments visuels nuit à la hiérarchisation de l’information, rendant la navigation complexe et fatigante.</p>
+                </div>
+            </div>
+            <div class="card" tabindex="0">
+                <h4>Dénominations peu compréhensibles</h4>
+                <div class="description">
+                    <p>Certains libellés manquent de clarté ou utilisent un jargon anglais peu intuitif, ce qui freine la compréhension et l'accès rapide à l'information.</p>
+                </div>
+            </div>
+            <div class="card" tabindex="0">
+                <h4>Doublons dans les liens de navigation</h4>
+                <div class="description">
+                    <p>La redondance des liens vers les mêmes catégories crée de la confusion et allonge inutilement le parcours utilisateur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="solution">
+        <h2>Solution proposée</h2>
+
+        <h3 class="puce-circle">Refonte de l'architecture de l'information du site</h3>
+        <div class="schema-wrapper">
+            <div class="schema-overlay">
+                <p>Cliquer pour afficher le schéma en grand</p>
+            </div>
+            <img src="/img/Amazon-Architecture_de_l_Information.png" alt="Schéma zoomable" id="openModal" class="schema-image" />
+        </div>
+        
+        <div id="modal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <button id="closeModal" aria-label="Fermer"><i class="fas fa-times"></i></button>
+                <div class="zoom-container" id="zoomContainer">
+                    <img src="/img/Amazon-Architecture_de_l_Information.png" id="zoomImg" />
+                    <div class="mini-map" id="miniMap">
+                        <img src="/img/Amazon-Architecture_de_l_Information.png" id="miniMapImg" />
+                        <div class="view-rectangle" id="viewRectangle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explications">
+            <div class="text-collapse">
+                <p>À la suite des conclusions de l’audit, j’ai proposé une réorganisation des catégories de produits, davantage en phase avec les habitudes et les codes culturels des utilisateurs français.<br>
+            
+                Pour établir cette nouvelle organisation, je me suis inspiré des typologies de magasins physiques que nous utilisons en France, telles que les magasins de bricolage, les magasin de jardinage, les hypermarchés pour les produits alimentaires et du quotidien, les enseignes spécialisées dans l’électronique et le digital, etc.</p>
+                    
+                <p>À partir de ces modèles, j’ai défini 6 typologies principales pour structurer les produits sur Amazon, auxquelles j’ai ajouté 2 catégories spécifiques au e-commerce : les produits d’occasion, et les articles artisanaux ou faits main ("Amazon handmade").<br>
+                
+                Cette nouvelle répartition vise à mieux refléter la logique d’organisation des utilisateurs français, facilitant ainsi la recherche et la navigation sur la plateforme.</p>
+            </div>
+            <button class="read-more" aria-expanded="false">Lire plus</button>
+        </div>  
+
+
+
+        <h3 class="puce-circle">Prototype du plan de navigation</h3>
+        <div class="menu">
+            <!-- Catégorie 1 -->
+            <div class="categorie">
+                <div class="menu-title" onclick="toggleMenu(this)"><span class="level-1">1 - Électronique, Tech & accessoires</span><i class="fas fa-chevron-down"></i></div>
+                <div class="submenu">
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Maison connectée</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Système de sécurité</span></div>
+                            <div class="menu-item"><span class="level-3">Prises électriques & accessoires</span></div>
+                            <div class="menu-item"><span class="level-3">Interrupteurs & variateurs d’intensité</span></div>
+                            <div class="menu-item"><span class="level-3">Chauffage & climatisation</span></div>
+                            <div class="menu-item"><span class="level-3">Enceintes & écrans connectés</span></div>
+                            <div class="menu-item"><span class="level-3">Électroménager connecté</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Informatique & bureautique</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Ordinateur portable</span></div>
+                            <div class="menu-item"><span class="level-3">Stockage USB</span></div>
+                            <div class="menu-item"><span class="level-3">Câbles d’alimentation & accessoires</span></div>
+                            <div class="menu-item"><span class="level-3">Imprimante & autres péripheriques d’ordinateur</span></div>
+                            <div class="menu-item"><span class="level-3">Piles, batteries & Chargeurs</span></div>
+                            <div class="menu-item"><span class="level-3">Composants informatiques</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Audiovisuel & Appareil domicile</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Audio & Hifi</span></div>
+                            <div class="menu-item"><span class="level-3">TV, vidéo & home cinéma</span></div>
+                            <div class="menu-item"><span class="level-3">Appareils photos & camescope</span></div>
+                            <div class="menu-item"><span class="level-3">Radios & accessoires</span></div>
+                            <div class="menu-item"><span class="level-3">Téléphones fixes</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">High-tech nomade</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Téléphones portables & accessoires</span></div>
+                            <div class="menu-item"><span class="level-3">Tablettes</span></div>
+                            <div class="menu-item"><span class="level-3">Liseuses & accessoires</span></div>
+                            <div class="menu-item"><span class="level-3">Objets connectés</span></div>
+                            <div class="menu-item"><span class="level-3">Drônes</span></div>
+                            <div class="menu-item"><span class="level-3">GPS & technologies embarquées</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Jeux vidéo & consoles</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Xbox</span></div>
+                            <div class="menu-item"><span class="level-3">Playstation</span></div>
+                            <div class="menu-item"><span class="level-3">Nintendo</span></div>
+                            <div class="menu-item"><span class="level-3">PC</span></div>
+                            <div class="menu-item"><span class="level-3">Jeux vidéo</span></div>
+                            <div class="menu-item"><span class="level-3">Matériel de Réalité Virtuelle</span></div>
+                            <div class="menu-item"><span class="level-3">Matériel Gamer</span></div>
+                            <div class="menu-item"><span class="level-3">Anciens systèmes</span></div>
+                            <div class="menu-item"><span class="level-3">Consoles portables</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catégorie 2 -->
+            <div class="categorie">
+                <div class="menu-title" onclick="toggleMenu(this)">
+                    <span class="level-1">2 - Culture</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="submenu">
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Livres</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Tous les livres</span></div>
+                            <div class="menu-item"><span class="level-3">Livres étrangers</span></div>
+                            <div class="menu-item"><span class="level-3">Manuels scolaires & parascolaires</span></div>
+                            <div class="menu-item"><span class="level-3">Ebooks Kindle & Abonnements</span></div>
+                            <div class="menu-item"><span class="level-3">Livres audio Audible & Abonnements</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Musique</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">CD</span></div>
+                            <div class="menu-item"><span class="level-3">Vinyle</span></div>
+                            <div class="menu-item"><span class="level-3">Instruments de musique & Sono</span></div>
+                            <div class="menu-item"><span class="level-3">Téléchargement de musique</span></div>
+                            <div class="menu-item"><span class="level-3">Amazon music Unlimited</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">DVD & Blu-ray</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">DVD</span></div>
+                            <div class="menu-item"><span class="level-3">Blu-ray</span></div>
+                            <div class="menu-item"><span class="level-3">Séries TV</span></div>
+                            <div class="menu-item"><span class="level-3">Amazon Prime Vidéo</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catégorie 3 -->
+            <div class="categorie">
+                <div class="menu-title" onclick="toggleMenu(this)">
+                    <span class="level-1">3 - Alimentation & Objets du Quotidien</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="submenu">
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Alimentation</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Épicerie sucrée</span></div>
+                            <div class="menu-item"><span class="level-3">Épicerie salée</span></div>
+                            <div class="menu-item"><span class="level-3">Café, thé & boisson sans alcool</span></div>
+                            <div class="menu-item"><span class="level-3">Bière, vin & spiritueux</span></div>
+                            <div class="menu-item"><span class="level-3">Bio, sans gluten & Équitable</span></div>
+                            <div class="menu-item"><span class="level-3">La boutique des producteurs</span></div>
+                            <div class="menu-item"><span class="level-3">Alimentation bébé</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Beauté, santé, bien-être</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Santé & soins du corps</span></div>
+                            <div class="menu-item"><span class="level-3">Homme</span></div>
+                            <div class="menu-item"><span class="level-3">Femme</span></div>
+                            <div class="menu-item"><span class="level-3">Nutrition</span></div>
+                            <div class="menu-item"><span class="level-3">Pharmacie</span></div>
+                            <div class="menu-item"><span class="level-3">Produits de beauté</span></div>
+                            <div class="menu-item"><span class="level-3">Cosmétiques asiatiques</span></div>
+                            <div class="menu-item"><span class="level-3">Beauté ethniques</span></div>
+                            <div class="menu-item"><span class="level-3">Produits Professionnels</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Habillage</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Chaussures</span></div>
+                            <div class="menu-item"><span class="level-3">Pantalons</span></div>
+                            <div class="menu-item"><span class="level-3">Pulls, sweat-shirts & T-shirts</span></div>
+                            <div class="menu-item"><span class="level-3">Vestes & manteaux</span></div>
+                            <div class="menu-item"><span class="level-3">Costumes & tailleurs</span></div>
+                            <div class="menu-item"><span class="level-3">Sacs</span></div>
+                            <div class="menu-item"><span class="level-3">Accessoire de mode</span></div>
+                            <div class="menu-item"><span class="level-3">Bijoux</span></div>
+                            <div class="menu-item"><span class="level-3">Déguisements</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Enfant, bébé, jouets</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Sac à langer & nettoyage bébé</span></div>
+                            <div class="menu-item"><span class="level-3">Couchage</span></div>
+                            <div class="menu-item"><span class="level-3">Jouets</span></div>
+                            <div class="menu-item"><span class="level-3">Chambre d'enfant & décoration</span></div>
+                            <div class="menu-item"><span class="level-3">Sacs & cartables</span></div>
+                            <div class="menu-item"><span class="level-3">Matériel d'arts créatifs</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Fournitures scolaires & bureau</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Sacs & trousses</span></div>
+                            <div class="menu-item"><span class="level-3">Stylos & feutres</span></div>
+                            <div class="menu-item"><span class="level-3">Fournitures de bureau</span></div>
+                            <div class="menu-item"><span class="level-3">Matériel scolaire</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catégorie 4 -->
+            <div class="categorie">
+                <div class="menu-title" onclick="toggleMenu(this)">
+                    <span class="level-1">4 - Maison</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="submenu">
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Ameublement & déco</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Ameublement</span></div>
+                            <div class="menu-item"><span class="level-3">Tableaux, poster & déco murale</span></div>
+                            <div class="menu-item"><span class="level-3">Décoration d’intérieur</span></div>
+                            <div class="menu-item"><span class="level-3">Luminaires</span></div>
+                            <div class="menu-item"><span class="level-3">Linge de maison</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Rangements & organisation</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Casiers & supports</span></div>
+                            <div class="menu-item"><span class="level-3">Sacs & transport de nourriture</span></div>
+                            <div class="menu-item"><span class="level-3">Boîtes & pots alimentaires</span></div>
+                            <div class="menu-item"><span class="level-3">Buanderie</span></div>
+                            <div class="menu-item"><span class="level-3">Paniers & boîtes</span></div>
+                            <div class="menu-item"><span class="level-3">Rangement pour vêtements & penderies</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Cuisine</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Ustensiles</span></div>
+                            <div class="menu-item"><span class="level-3">Accessoires de pâtisseries</span></div>
+                            <div class="menu-item"><span class="level-3">Plats de cuisson</span></div>
+                            <div class="menu-item"><span class="level-3">Plats de service</span></div>
+                            <div class="menu-item"><span class="level-3">Vaisselle</span></div>
+                            <div class="menu-item"><span class="level-3">Récipients</span></div>
+                            <div class="menu-item"><span class="level-3">Poubelles</span></div>
+                            <div class="menu-item"><span class="level-3">Rangement de cuisine</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Électroménager</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Appareil de ménage</span></div>
+                            <div class="menu-item"><span class="level-3">Électroménager de cuisine</span></div>
+                            <div class="menu-item"><span class="level-3">Conservation & cuisson des aliments</span></div>
+                            <div class="menu-item"><span class="level-3">Linge & couture</span></div>
+                            <div class="menu-item"><span class="level-3">Hygiène corporelle & salle de bain</span></div>
+                            <div class="menu-item"><span class="level-3">Chambre</span></div>
+                            <div class="menu-item"><span class="level-3">Chauffage & climatisation</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Entretien & nettoyage</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Produits d’entretien de surfaces</span></div>
+                            <div class="menu-item"><span class="level-3">Matériel de nettoyage</span></div>
+                            <div class="menu-item"><span class="level-3">Produits pour la vaisselle</span></div>
+                            <div class="menu-item"><span class="level-3">Produits pour les textiles</span></div>
+                            <div class="menu-item"><span class="level-3">Phito-sanitaire</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catégorie 5 -->
+            <div class="categorie">
+                <div class="menu-title" onclick="toggleMenu(this)">
+                    <span class="level-1">5 - Jardin, Brico & Loisirs</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="submenu">
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Jardin</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Engrais & fertilisants</span></div>
+                            <div class="menu-item"><span class="level-3">Outils de Jardin</span></div>
+                            <div class="menu-item"><span class="level-3">Piscine & Spa</span></div>
+                            <div class="menu-item"><span class="level-3">Barbecue</span></div>
+                            <div class="menu-item"><span class="level-3">Mobilier de jardin & déco d’extérieur</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Animalerie</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Alimentation animaux</span></div>
+                            <div class="menu-item"><span class="level-3">Jouets</span></div>
+                            <div class="menu-item"><span class="level-3">Accessoires</span></div>
+                            <div class="menu-item" onclick="toggleMenu(this)"><span class="level-3">Filtres par animaux</span><i class="fas fa-chevron-down"></i></div>
+                            <div class="submenu">
+                                <div class="menu-item"><span class="level-4">Chats</span></div>
+                                <div class="menu-item"><span class="level-4">Chiens</span></div>
+                                <div class="menu-item"><span class="level-4">Cheveaux</span></div>
+                                <div class="menu-item"><span class="level-4">Poissons</span></div>
+                                <div class="menu-item"><span class="level-4">Lapins & autres rongeurs</span></div>
+                                <div class="menu-item"><span class="level-4">Oiseaux</span></div>
+                                <div class="menu-item"><span class="level-4">Insectes</span></div>
+                                <div class="menu-item"><span class="level-4">Reptiles & amphibiens</span></div>
+                                <div class="menu-item"><span class="level-4">Oiseaux & animaux sauvages</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Bricolage</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Outillage</span></div>
+                            <div class="menu-item"><span class="level-3">Cuisine, salle de bain, WC</span></div>
+                            <div class="menu-item"><span class="level-3">Électricité</span></div>
+                            <div class="menu-item"><span class="level-3">Sécurité</span></div>
+                            <div class="menu-item"><span class="level-3">Quincaillerie</span></div>
+                            <div class="menu-item"><span class="level-3">Peinture & revêtement</span></div>
+                            <div class="menu-item"><span class="level-3">Amazon Paint Finder</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Loisirs créatifs</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Fournitures de loisirs créatifs</span></div>
+                            <div class="menu-item"><span class="level-3">Mosaïque</span></div>
+                            <div class="menu-item"><span class="level-3">Création de masques</span></div>
+                            <div class="menu-item"><span class="level-3">Couture</span></div>
+                            <div class="menu-item"><span class="level-3">Tricot & crochet</span></div>
+                            <div class="menu-item"><span class="level-3">Tissage, tapisserie & canvas</span></div>
+                            <div class="menu-item"><span class="level-3">Teinture & coloration textile</span></div>
+                            <div class="menu-item"><span class="level-3">Céramique & poterie</span></div>
+                            <div class="menu-item"><span class="level-3">Vannerie</span></div>
+                            <div class="menu-item"><span class="level-3">Papeterie, imprimerie & scrapbooking</span></div>
+                            <div class="menu-item"><span class="level-3">Dessin & peinture</span></div>
+                            <div class="menu-item"><span class="level-3">Encadrement</span></div>
+                            <div class="menu-item"><span class="level-3">Maroquinerie</span></div>
+                            <div class="menu-item"><span class="level-3">Menuiserie</span></div>
+                            <div class="menu-item"><span class="level-3">Meubles & accessoiress</span></div>
+                            <div class="menu-item"><span class="level-3">Perlage & bijoux</span></div>
+                            <div class="menu-item"><span class="level-3">Emballage cadeau</span></div>
+                            <div class="menu-item"><span class="level-3">Fabrication de bougies & savons</span></div>
+                            <div class="menu-item"><span class="level-3">Art floral</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Automobiles</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Boutique Moto</span></div>
+                            <div class="menu-item"><span class="level-3">Pièces détachées Auto</span></div>
+                            <div class="menu-item"><span class="level-3">Camping-car</span></div>
+                            <div class="menu-item"><span class="level-3">Accessoires Auto & Electronique embarqué</span></div>
+                            <div class="menu-item"><span class="level-3">Transport & rangement</span></div>
+                            <div class="menu-item"><span class="level-3">Entretien Auto & Moto</span></div>
+                            <div class="menu-item"><span class="level-3">Huiles & Liquides</span></div>
+                            <div class="menu-item"><span class="level-3">Pneus & jantes</span></div>
+                            <div class="menu-item"><span class="level-3">Outils & dépannage</span></div>
+                            <div class="menu-item"><span class="level-3">Sièges Auto</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Sport</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Accessoires de sport</span></div>
+                            <div class="menu-item"><span class="level-3">Chaussures de sport</span></div>
+                            <div class="menu-item"><span class="level-3">Vêtements de sport</span></div>
+                            <div class="menu-item"><span class="level-3">Équipement d'exercices & musculation</span></div>
+                            <div class="menu-item"><span class="level-3">Vêtements & équipement de loisirs de plein air</span></div>
+                            <div class="menu-item"><span class="level-3">Chasse & pêche</span></div>
+                            <div class="menu-item"><span class="level-3">Électronique sportive</span></div>
+                            <div class="menu-item"><span class="level-3">Médecine du sport</span></div>
+                            <div class="menu-item"><span class="level-3">Divers jeux</span></div>
+                            <div class="menu-item"><span class="level-3">Sports de disques</span></div>
+                            <div class="menu-item"><span class="level-3">Billeterie</span></div>
+                            <div class="menu-item"><span class="level-3">Boutique du supporter</span></div>
+                            <div class="menu-item"><span class="level-3">Trophées</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Catégorie 6 -->
+            <div class="categorie">
+                <div class="menu-title" onclick="toggleMenu(this)">
+                    <span class="level-1">6 - Matériel professionnel & Industrie</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="submenu">
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Chimie, Labo & Cosmétique</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Instruments & équipements</span></div>
+                            <div class="menu-item"><span class="level-3">Verrerie & matériel</span></div>
+                            <div class="menu-item"><span class="level-3">Fournitures & consommables</span></div>
+                            <div class="menu-item"><span class="level-3">Filtres de laboratoire</span></div>
+                            <div class="menu-item"><span class="level-3">Produits chimiques</span></div>
+                            <div class="menu-item"><span class="level-3">Mobilier de laboratoire</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Médicale</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Équipement dentaire</span></div>
+                            <div class="menu-item"><span class="level-3">Fournitures médicales professionnelles</span></div>
+                            <div class="menu-item"><span class="level-3">Produits professionnels de santé</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Machines, Atelier & Équipement agricole</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">équipement & fournitures agricoles</span></div>
+                            <div class="menu-item"><span class="level-3">Filtrage industriel</span></div>
+                            <div class="menu-item"><span class="level-3">Hydraulique, pneumatique & plomberie industrielle</span></div>
+                            <div class="menu-item"><span class="level-3">Impression & numérisation 3D</span></div>
+                            <div class="menu-item"><span class="level-3">Matières premières</span></div>
+                            <div class="menu-item"><span class="level-3">Outils de découpe</span></div>
+                            <div class="menu-item"><span class="level-3">Produits de ponçage & abrasifs industriels</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Manutention, Fournitures de conditionnement & d'expédition</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Fournitures de conditionne-ment & d’expédition</span></div>
+                            <div class="menu-item"><span class="level-3">Outils manuels & électriques</span></div>
+                            <div class="menu-item"><span class="level-3">Produits de manutention</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Magasin, rayonnage & restauration</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">équipement pour rayonnage</span></div>
+                            <div class="menu-item"><span class="level-3">équipement & fourniture de restauration</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Matériel & équipement électrique</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">énergie solaire & éolienne</span></div>
+                            <div class="menu-item"><span class="level-3">équipement de transmis-sion d’énergie</span></div>
+                            <div class="menu-item"><span class="level-3">équipement électrique industriel</span></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-title" onclick="toggleMenu(this)"><span class="level-2">Sécurité & entretien</span><i class="fas fa-chevron-down"></i></div>
+                        <div class="submenu">
+                            <div class="menu-item"><span class="level-3">Fournitures nettoyage & entretien</span></div>
+                            <div class="menu-item"><span class="level-3">Fournitures pédagogiques pour les professionnels</span></div>
+                            <div class="menu-item"><span class="level-3">Produits professionnels de sécurité</span></div>
+                            <div class="menu-item"><span class="level-3">Test & mesurage</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Catégorie 7 -->
+            <div class="categorie">
+                <div class="menu-title" onclick="toggleMenu(this)">
+                    <span class="level-1">7 - Seconde Chance</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="submenu">
+                    <div class="menu-item"><span class="level-2">Remis à neuf (Amazon Renewed)</span></div>
+                    
+                    <div class="menu-item"><span class="level-2">Produits d'occasion (Amazon Seconde Main)</span></div>
+                </div>
+            </div>
+
+            <!-- Catégorie 8 -->
+            <div class="categorie">
+                <div class="menu-title" onclick="toggleMenu(this)">
+                    <span class="level-1">8 - Artisanal ("handmade")</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="submenu">
+                    <div class="menu-item"><span class="level-2">Mode</span></div>
+                    <div class="menu-item"><span class="level-2">Beauté, santé, bien-être</span></div>
+                    <div class="menu-item"><span class="level-2">Cadeaux & Articles de fête</span></div>
+                    <div class="menu-item"><span class="level-2">Enfant, bébé, jouets</span></div>
+                    <div class="menu-item"><span class="level-2">Ameublement & déco</span></div>
+                    <div class="menu-item"><span class="level-2">Animalerie</span></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h3 class="puce-circle">Wireframes Mid-Fi de la solution</h3>
+        <div class="gallery">
+          <div class="main-image">
+            <img id="mainWireframe" src="/img/Amazon-Wireframe_mid-fi_1.jpg" alt="Wireframe 1" />
+          </div>
+          <div class="thumbnails">
+            <button onclick="changeImage(1)" aria-label="Voir wireframe 1">
+              <img src="/img/Amazon-Wireframe_mid-fi_1.jpg" alt="Wireframe mid-fi du nouveau menu de navigation" />
+            </button>
+            <button onclick="changeImage(2)" aria-label="Voir wireframe 2">
+              <img src="/img/Amazon-Wireframe_mid-fi_2.jpg" alt="Wireframe mid-fi des catégories dans la barre de recherche par ordre alphabétique" />
+            </button>
+            <button onclick="changeImage(3)" aria-label="Voir wireframe 3">
+              <img src="/img/Amazon-Wireframe_mid-fi_3.jpg" alt="Wireframe mid-fi des catégories dans la barre de recherche selon l'ordre du menu de navigation" />
+            </button>
+          </div>
+        </div>
+    </section>
+    
+
+    <section id="testing">
+        <h2>Test de la solution</h2>
+        <div>
+            <p>Pour s'assurer de la viabilité de la solution proposé, il faut effectuer une phase de test utilisateur. Cette phase n'a pas encore été effectué auprès d'un échantillon suffisamment important pour être représentative. Néanmoins l'échantillon testé à approuvé cette nouvelle architecture de l'information et l'UX writting de celle-ci</p>
+            
+            <div class="testing_method">
+                <div>
+                    <div class="text-collapse">
+                    <p><strong>Pour aller plus loin</strong> dans cette phase de test, il serait intéressant de procéder à la fois à un A/B Testing et une étude d'usabilité auprès d'un échantillonnage plus important d'utilisateurs variés et dont l'expérience de l'interface d'Amazon serait diversifiée. Dans cette phase de test, on pourrait reproduire schématiquement les différentes catégories de produit et leur architecture, sur deux prototypes au design similaire : l'un de l'interface actuelle du site web d'Amazon, et l'autre de la solution proposé. On demanderait alors aux utilisateurs de retrouver un type de produit à travers les différentes catégories et sous catégorie, en évaluant le temps passé, le nombre d'erreurs, les retours à la catégorie parent, etc. En procédant de la même manière pour les 2 prototypes, on parviendra à déterminer quelle proposition semble la plus cohérente auprès des utilisateurs français.</p>
+                    </div>
+                    <button class="read-more" aria-expanded="false">Lire plus</button>
+                </div>
+                
+                <div class="image-container">
+                    <img src="/img/Schema_AB-Testing.png" alt="Schéma d’A/B testing">
+                    <div class="image-credit">
+                      Image © <a href="https://www.seobility.net/en/wiki/AB_Testing" target="_blank" rel="noopener">Seobility</a>,
+                      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+                      – modifiée (recadrage)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="conclusion" class="box-section">
+        <h2>Ma conclusion du projet</h2>
+        <div>
+            <div class="intro_conclusion">
+                <p>Ce projet d’audit ergonomique de l’interface Amazon a été une véritable exploration de l’interaction entre l’utilisateur et l’information, ainsi que le défi de rendre un site ultra-populaire plus intuitif, efficace et humain. Réorganiser la navigation et simplifier les parcours sans sacrifier la richesse de l’offre d'Amazon était l'occasion pour moi de tester ma capacité à anticiper les besoins des utilisateurs tout en respectant leurs habitudes et leurs conventions culturelles.</p>
+
+                <p></p>Voici les challenges relevés et ce que j'en retiens :</p>
+            </div>
+            <ul class="container">
+                <div class="card"><li><h3>Réaliser un audit ergonomique</h3>
+                    <div class="learn">
+                        <ul>
+                            <li>Bien choisir/formuler les critères évalués</li>
+                            <li>Appliquer une certaine rigeur pour que l'audit soit le moins subjectif possible</li>
+                            <li>Détailler les commentaires de l'évaluation pour retranscrire les bons éléments et les points de frictions aux collaborateurs/clients</li>
+                            <li>Relativiser sur l'impact négatif d'un critère mal respecté, car tous ne sont pas des points de frictions</li>
+                        </ul>
+                    </div></li>
+                </div>
+                <div class="card"><li><h3>Hierarchiser l'information</h3>
+                    <div class="learn">
+                        <ul>
+                            <li>Utiliser la loi de Miller ("7 ± 2") pour faciliter la compréhension et la mémorisation pour comparer des items</li>
+                            <li>Simplifier les choix pour l'utilisateur</li>
+                            <li>Limiter les catégories et sous-catégories de produits en 3 niveaux d'imbrications maximum</li>
+                            <li>Conserver la même hierarchie sur tout le site pour maintenir la cohérence</li>
+                        </ul>
+                    </div></li>
+                </div>
+                <div class="card"><li><h3>Communiquer avec les Utilisateurs (UX writing)</h3>
+                    <div class="learn">
+                        <ul>
+                            <li>Utiliser un vocabulaire clair, des dénominations explicites qui utilisent les codes et conventions sémantiques de l'utilisateur</li>
+                            <li>Appliquer avec rigeur la cohérence des codes <i>(ex : "&" ou "et", mais d'alternance entre les deux)</i></li>
+                            
+                        </ul>
+                    </div></li>
+                </div>
+                
+            </ul>
+        </div>
+        <div>
+            <img src="" alt="">
+            <p></p>
+        </div>
+    </section>
+
+
+
+    <section class="footer" id="contact">
+        <div id="footer_width">
+            <h1>Contact</h1>
+            <div id="contact_grid">
+                <div class="remerciements">
+                    <img src="../../img/JeanRouyer_Avatar.jpg" alt="Avatar représentant Jean en Astronaute">
+                    <p>Merci d'avoir consulté mon profil !</p>
+                    <p>N'hésitez pas à le partager, à télécharger mon CV ou à me contacter par mail pour tout renseignement complémentaire.</p>
+                    <p>A bientôt !</p>
+                </div>
+                <div class="interagir">
+                    <h2>Mon Résumé</h2>
+                    
+                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025-light.pdf" download="ROUYER-Jean_CV_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">Télécharger mon CV<i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                    <p><i>CV en PDF (interactif) : 712&nbsp;ko</i></p>
+                    
+                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025-light_recherche-Alternance.pdf" download="ROUYER-Jean_CV-Alternance_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">CV pour Alternance<i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                    <p><i>CV Alternance en PDF : 712&nbsp;ko</i></p>
+                </div>
+                <div class="interagir">
+                    <h2>Me joindre facilement</h2>
+                    <a href="mailto:jeanrouyer24@gmail.com?subject=Visite%20de%20votre%20site&body=Bonjour%20Jean,%0D%0AJ%27ai%20visité%20votre%20site%20et%20je%20me%20permets%20de%20vous%20contacter%20concernant..." class="btn btn-primary" onclick="openMailInNewTab(event)">
+                        Me contacter par mail<i class="fa-solid fa-paper-plane"></i>
+                    </a>
+                    <div class="copy-info" onclick="copyEmail()">
+                        <span id="email-text">jeanrouyer24@gmail.com</span>
+                        <i class="fa-solid fa-copy" aria-hidden="true"></i>
+                    </div>
+                    <span id="copy-feedback" class="sr-only">Adresse mail copiée</span>
+                    <p><i>Prenez contact par mail pour toute demande de renseignements, ou toute réflexion sur votre projet.</i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
