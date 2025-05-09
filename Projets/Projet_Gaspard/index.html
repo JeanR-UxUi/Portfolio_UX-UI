@@ -43,7 +43,7 @@
         <a href="#header" class="active"></a>
         <a href="#contexte"></a>
         <a href="#pain_points"></a>
-        <a href="#solution"></a>
+        <a href="#solution" data-scroll-target="#ancre_solution_Logo"></a>
         <a href="#conclusion"></a>
     </div>
 
@@ -136,17 +136,23 @@
         
         <div class="collapsible-section">
             <h2 class="collapsible-trigger">Analyse de l'identité du bar
-                <button class="toggle-section" aria-expanded="false" aria-controls="bar-observations">Lire plus
-                    <i class="fas fa-chevron-down"aria-hidden="true"></i> 
+                <button class="toggle-section" aria-expanded="true" aria-controls="bar-observations">Lire moins
+                    <i class="fas fa-chevron-up"aria-hidden="true"></i> 
                 </button>
             </h2>
 
-            <div id="bar-observations" class="gallery collapsible-content">
+            <div id="bar-observations" class="gallery collapsible-content open">
                 <div class="main-image">
                     <button class="zoom-trigger" aria-label="Zoomer l'image principale">
                         <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                     </button>
-                    <img src="../../img/Gaspard_PhotoBar_1.jpg" alt="Devanture du bar et terrasse"/>
+                    
+                    <div class="image-container">
+                        <img src="../../img/Gaspard_PhotoBar_1.jpg" alt="Devanture du bar et terrasse"/>
+                        <div class="image-credit">
+                          Crédit photo © <a href="https://www.instagram.com/gaspard_grenoble/" target="_blank" rel="noopener">Instagram @gaspard_grenoble</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="thumbnails">
                     <button aria-label="Voir la photo 1" data-img="../../img/Gaspard_PhotoBar_1.jpg" data-alt="Devanture du bar et de sa terrasse">
@@ -202,7 +208,7 @@
     <section id="solution">
         <h2>Solution proposée</h2>
 
-        <h3 class="puce-circle">Refonte de l'architecture de l'information du site</h3>
+        <h3 class="puce-circle">Itérations de logos</h3>
         <div class="schema-wrapper" data-schema-id="schema3">
             <div class="schema-overlay">
                 <p>Cliquer pour afficher le schéma en grand</p>
@@ -238,7 +244,7 @@
 
 
 
-        <h3 class="puce-circle">Comparaison du logo Gaspard</h3>
+        <h3 id="ancre_solution_Logo" class="puce-circle">Le logo définitif du Gaspard, en version light et dark</h3>
         <div class="slider-container" id="slider">
             <img src="../../img/Gaspard_logo-light.svg" alt="Logo fond blanc">
             <img src="../../img/Gaspard_logo-dark.svg" alt="Logo fond noir" class="top-image" id="topImage">
@@ -253,26 +259,19 @@
     
 
     <section id="testing">
-        <h2>Test de la solution</h2>
+        <h2>Validation et retours</h2>
         <div>
-            <p>Pour s'assurer de la viabilité de la solution proposé, il faut effectuer une phase de test utilisateur. Cette phase n'a pas encore été effectué auprès d'un échantillon suffisamment important pour être représentative. Néanmoins l'échantillon testé à approuvé cette nouvelle architecture de l'information et l'UX writting de celle-ci</p>
+            <p>Bien que des tests utilisateurs formels n'aient pas été menés, le logo a été présenté à un panel restreint de clients réguliers et de collaborateurs du bar. Leurs retours ont été unanimement positifs, soulignant la pertinence de l'identité visuelle par rapport à l'ambiance et aux valeurs du Gaspard.</p>
             
             <div class="testing_method">
                 <div class="image-container">
-                    <img src="../../img/Gaspard_PhotoBar_7.jpg" alt="Schéma d’A/B testing">
-                    <div class="image-credit">
-                      Image © <a href="https://www.seobility.net/en/wiki/AB_Testing" target="_blank" rel="noopener">Seobility</a>,
-                      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
-                      – modifiée (recadrage)
-                    </div>
+                    <img src="../../img/Gaspard_PhotoBar_7.jpg" alt="l'ancienne enseigne peinte provisoirement sur la devanture par le gérant, représentant aussi la Meige et le nom du bar écris en manuscrit dans un cercle">
                 </div>
                 
                 <div class="image-container">
-                    <img src="../../img/Gaspard_NouveauLogo_Pull.jpg" alt="Schéma d’A/B testing">
+                    <img src="../../img/Gaspard_NouveauLogo_Pull.jpg" alt="le nouveau logo sur un pull porté par le gérant au pied de la meige">
                     <div class="image-credit">
-                      Image © <a href="https://www.seobility.net/en/wiki/AB_Testing" target="_blank" rel="noopener">Seobility</a>,
-                      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
-                      – modifiée (recadrage)
+                      Crédit photo © <a href="https://www.instagram.com/p/C61KamDNO8s/" target="_blank" rel="noopener">Instagram @gaspard_grenoble</a>
                     </div>
                 </div>
             </div>
@@ -285,46 +284,37 @@
         <h2>Ma conclusion du projet</h2>
         <div>
             <div class="intro_conclusion">
-                <p>Ce projet d’audit ergonomique de l’interface Amazon a été une véritable exploration de l’interaction entre l’utilisateur et l’information, ainsi que le défi de rendre un site ultra-populaire plus intuitif, efficace et humain. Réorganiser la navigation et simplifier les parcours sans sacrifier la richesse de l’offre d'Amazon était l'occasion pour moi de tester ma capacité à anticiper les besoins des utilisateurs tout en respectant leurs habitudes et leurs conventions culturelles.</p>
+                <p>Ce projet m'a permis de renforcer mes compétences en conception de logos, en particulier dans l'adaptation d'une identité visuelle aux valeurs et à l'histoire d'un lieu. La collaboration étroite avec le gérant du Gaspard a été essentielle pour aboutir à un résultat authentique et mémorable.</p>
 
                 <p></p>Voici les challenges relevés et ce que j'en retiens :</p>
             </div>
             <ul class="container">
-                <div class="card"><li><h3>Réaliser un audit ergonomique</h3>
+                <div class="card"><li><h3>Lisibilité et adaptabilité</h3>
                     <div class="learn">
                         <ul>
-                            <li>Bien choisir/formuler les critères évalués</li>
-                            <li>Appliquer une certaine rigeur pour que l'audit soit le moins subjectif possible</li>
-                            <li>Détailler les commentaires de l'évaluation pour retranscrire les bons éléments et les points de frictions aux collaborateurs/clients</li>
-                            <li>Relativiser sur l'impact négatif d'un critère mal respecté, car tous ne sont pas des points de frictions</li>
+                            <li>Penser le logo pour qu'il fonctionne aussi bien sur l'enseigne que sur des objets dérivés, s’adapte facilement tout en gardant un fort pouvoir d’évocation.</li>
+                            <li>Eviter les détails superflu qui surchargent le graphisme</li>
+                            <li>Ne pas avoir peur du vide</li>
                         </ul>
                     </div></li>
                 </div>
-                <div class="card"><li><h3>Hierarchiser l'information</h3>
+                <div class="card"><li><h3>Fidélité de l'image</h3>
                     <div class="learn">
                         <ul>
-                            <li>Utiliser la loi de Miller ("7 ± 2") pour faciliter la compréhension et la mémorisation pour comparer des items</li>
-                            <li>Simplifier les choix pour l'utilisateur</li>
-                            <li>Limiter les catégories et sous-catégories de produits en 3 niveaux d'imbrications maximum</li>
-                            <li>Conserver la même hierarchie sur tout le site pour maintenir la cohérence</li>
+                            <li>Simplifier le massif de la meige en seulement 2 couleurs, tout en restant reconnaissable auprès des passionnés de montagne</li>
+                            <li>Ne pas rendre le logo trop brutaliste pour autant</li>
                         </ul>
                     </div></li>
                 </div>
-                <div class="card"><li><h3>Communiquer avec les Utilisateurs (UX writing)</h3>
+                <div class="card"><li><h3>Anticiper les futures utilisations du logo</h3>
                     <div class="learn">
                         <ul>
-                            <li>Utiliser un vocabulaire clair, des dénominations explicites qui utilisent les codes et conventions sémantiques de l'utilisateur</li>
-                            <li>Appliquer avec rigeur la cohérence des codes <i>(ex : "&" ou "et", mais d'alternance entre les deux)</i></li>
-                            
+                            <li>Garder une forme régulière (cercle) pour des utilisations propres à un bar, comme sur des dessous de verres, de la gravures sur  des planches de plateau apéritif, impression sur des verres à pieds, etc</li>
+                            <li>Simplicité du Noir & Blanc pour des impressions, de la pyrogravure, de la gravure, etc</i></li>
                         </ul>
                     </div></li>
                 </div>
-                
             </ul>
-        </div>
-        <div>
-            <img src="" alt="">
-            <p></p>
         </div>
     </section>
 

@@ -41,15 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function onScroll() {
-        let scrollPos = window.scrollY + window.innerHeight / 2;
-
+        // Position de "référence" : 30% du haut de la fenêtre
+        let scrollPos = window.scrollY + window.innerHeight * 0.3;
+    
+        let currentId = null;
+    
         sections.forEach(section => {
             const top = section.offsetTop;
             const height = section.offsetHeight;
             if (scrollPos >= top && scrollPos < top + height) {
-                updateActiveLink(section.id);
+                currentId = section.id;
             }
         });
+    
+        if (currentId) updateActiveLink(currentId);
     }
 
     // Met à jour l'état actif au scroll
@@ -63,9 +68,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Défilement personnalisé pour onglet-side si data-scroll-target est présent
+    document.querySelectorAll(".onglet-side a[data-scroll-target]").forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.dataset.scrollTarget);
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+                // Met à jour l’URL si besoin
+                history.pushState(null, null, this.getAttribute("href"));
+            }
+        });
+    });
+
     // Active l'état correct au chargement
     onScroll();
 });
+
+
 
 // ========================
 // ✅ 3. BANNIÈRE : Effet Parallaxe au scroll
