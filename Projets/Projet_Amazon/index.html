@@ -14,8 +14,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     
     <!-- Javascript-->
-    <script src="../../assets/js/script.js"></script>
-    <script src="../js/script_projet.js"></script>
+    <script src="../../assets/js/script.js" defer></script>
+    <script src="../js/script_projet.js" defer></script>
 
     <!-- Panzoom-->
     <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
@@ -30,8 +30,8 @@
         <a href="../../index.html" class="logo"> Jean Rouyer</a>
         <div class="nav-links">
             <ul>
-                <li class="active"><a href="../../index.html">Accueil</a></li>
-                <li><a href="../../index.html#projets">Projets</a></li>
+                <li><a href="../../index.html">Accueil</a></li>
+                <li class="active"><a href="../../index.html#projets">Projets</a></li>
                 <li><a href="../../index.html#competences">Compétences & outils</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -39,8 +39,15 @@
         <div class="menu-hamburger"><i class="fa-solid fa-bars"></i></div>
     </nav>
 
+    <div class="onglet-side">
+        <a href="#header" class="active"></a>
+        <a href="#contexte"></a>
+        <a href="#pain_points"></a>
+        <a href="#solution"></a>
+        <a href="#conclusion"></a>
+    </div>
 
-    <section class="header">
+    <section id="header" class="header">
         <div class="header_background"></div>
 
         <div class="banner_projets">
@@ -123,6 +130,61 @@
         </div>
     </section>
 
+    <section id="UX research">
+        <h2>Analyse diagnostique de l'interface</h2>
+        <div class="collapsible-section">
+            <h3 class="puce-circle collapsible-trigger">Premières observations
+                <button class="toggle-section" aria-expanded="false" aria-controls="ux-content-observations">Lire plus
+                    <i class="fas fa-chevron-down"aria-hidden="true"></i> 
+                </button>
+            </h3>
+
+            <div id="ux-content-observations" class="gallery collapsible-content">
+                <div class="main-image">
+                    <button class="zoom-trigger" aria-label="Zoomer l'image principale">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </button>
+                    <img src="../../img/Amazon-Analyse_pages_1.png" alt="Capture annotée : problèmes d’ergonomie sur la page 'Services Amazon'(mise en page, navigation, redondances, hiérarchie visuelle)"/>
+                </div>
+                <div class="thumbnails">
+                    <button aria-label="Voir l'analyse de la page d'accueil" data-img="../../img/Amazon-Analyse_pages_1.png" data-alt="Capture annotée : problèmes d’ergonomie sur la page d'accueil Amazon (mise en page, navigation, redondances, hiérarchie visuelle)">
+                        <img src="../../img/Amazon-Analyse_pages_1.png" alt="Aperçu réduit de la capture annotée montrant les problèmes d’ergonomie sur la page d'accueil Amazon" />
+                    </button>
+                    <button aria-label="Voir l'analyse des menus de navigation" data-img="../../img/Amazon-Analyse_pages_2.png" data-alt="Capture annotée : problèmes d’ergonomie de certains menus de navigation (mise en page et hiérarchie visuelle, dénominations peu explicites des catégories)">
+                        <img src="../../img/Amazon-Analyse_pages_2.png" alt="Aperçu réduit de la capture annotée montrant les problèmes d’ergonomie sur certains menus de navigation" />
+                    </button>
+                    <button aria-label="Voir l'analyse de la page dénommée Services Amazon" data-img="../../img/Amazon-Analyse_pages_3.png" data-alt="Capture annotée : problèmes d’ergonomie sur la page 'Services Amazon'(mise en page, navigation, redondances, hiérarchie visuelle)">
+                        <img src="../../img/Amazon-Analyse_pages_3.png" alt="Aperçu réduit de la capture annotée montrant les problèmes d’ergonomie sur la page 'Services Amazon'(mise en page, navigation, redondances, hiérarchie visuelle)" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="collapsible-section">
+            <h3 class="puce-circle collapsible-trigger">Audit Ergonomique
+                <button class="toggle-section" aria-expanded="false" aria-controls="ux-content-audit">Lire plus
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+            </h3>
+
+            <div id="ux-content-audit" class="schéma collapsible-content">
+                <div class="schema-wrapper" data-schema-id="schema1">
+                    <div class="schema-overlay"><p>Cliquer pour afficher le schéma en grand</p></div>
+                    <img src="../../img/Amazon_Parcours_Audit_Bastien-Scapin.png" alt="Schéma zoomable du détail des Parcours de l'Audit Ergonomique" class="schema-image" />
+                </div>
+                
+                <div class="schema-wrapper" data-schema-id="schema2">
+                    <div class="schema-overlay"><p>Cliquer pour afficher le schéma en grand</p></div>
+                    <img src="../../img/Amazon_Grille_Audit_Bastien-Scapin.png" alt="Schéma zoomable de la Grille d'Audit Ergonomique" class="schema-image" />
+                </div>
+                
+            </div>
+        </div>
+        
+
+    </section>
+
     <section id="pain_points" class="box-section">
         <h2>Les "Pain Points"</h2>
         <div class="container">
@@ -153,25 +215,26 @@
         <h2>Solution proposée</h2>
 
         <h3 class="puce-circle">Refonte de l'architecture de l'information du site</h3>
-        <div class="schema-wrapper">
+        <div class="schema-wrapper" data-schema-id="schema3">
             <div class="schema-overlay">
                 <p>Cliquer pour afficher le schéma en grand</p>
             </div>
-            <img src="../../img/Amazon-Architecture_de_l_Information.png" alt="Schéma zoomable" id="openModal" class="schema-image" />
+            <img src="../../img/Amazon-Architecture_de_l_Information.png" alt="Schéma zoomable" class="schema-image" />
         </div>
-        
+
         <div id="modal" class="modal" aria-hidden="true">
             <div class="modal-content">
-                <button id="closeModal" aria-label="Fermer"><i class="fas fa-times"></i></button>
-                <div class="zoom-container" id="zoomContainer">
-                    <img src="../../img/Amazon-Architecture_de_l_Information.png" id="zoomImg" />
-                    <div class="mini-map" id="miniMap">
-                        <img src="../../img/Amazon-Architecture_de_l_Information.png" id="miniMapImg" />
-                        <div class="view-rectangle" id="viewRectangle"></div>
-                    </div>
+              <button id="closeModal" aria-label="Fermer"><i class="fas fa-times"></i></button>
+              <div class="zoom-container" id="zoomContainer">
+                <img id="zoomImg" />
+                <div class="mini-map" id="miniMap">
+                  <img id="miniMapImg" />
+                  <div class="view-rectangle" id="viewRectangle"></div>
                 </div>
+              </div>
             </div>
         </div>
+
 
         <div class="explications">
             <div class="text-collapse">
@@ -183,7 +246,7 @@
                 
                 Cette nouvelle répartition vise à mieux refléter la logique d’organisation des utilisateurs français, facilitant ainsi la recherche et la navigation sur la plateforme.</p>
             </div>
-            <button class="read-more" aria-expanded="false">Lire plus</button>
+            <button class="read-more" aria-expanded="false">Lire plus <i class="fas fa-chevron-down"></i></button>
         </div>  
 
 
@@ -719,20 +782,20 @@
 
         <h3 class="puce-circle">Wireframes Mid-Fi de la solution</h3>
         <div class="gallery">
-          <div class="main-image">
-            <img id="mainWireframe" src="../../img/Amazon-Wireframe_mid-fi_1.jpg" alt="Wireframe 1" />
-          </div>
-          <div class="thumbnails">
-            <button onclick="changeImage(1)" aria-label="Voir wireframe 1">
-              <img src="../../img/Amazon-Wireframe_mid-fi_1.jpg" alt="Wireframe mid-fi du nouveau menu de navigation" />
-            </button>
-            <button onclick="changeImage(2)" aria-label="Voir wireframe 2">
-              <img src="../../img/Amazon-Wireframe_mid-fi_2.jpg" alt="Wireframe mid-fi des catégories dans la barre de recherche par ordre alphabétique" />
-            </button>
-            <button onclick="changeImage(3)" aria-label="Voir wireframe 3">
-              <img src="../../img/Amazon-Wireframe_mid-fi_3.jpg" alt="Wireframe mid-fi des catégories dans la barre de recherche selon l'ordre du menu de navigation" />
-            </button>
-          </div>
+            <div class="main-image">
+                <img src="../../img/Amazon-Wireframe_mid-fi_1.jpg" alt="Wireframe 1" />
+            </div>
+            <div class="thumbnails">
+                <button onclick="changeImage(1)" aria-label="Voir wireframe 1" data-img="../../img/Amazon-Wireframe_mid-fi_1.jpg" data-alt="Wireframe 1">
+                    <img src="../../img/Amazon-Wireframe_mid-fi_1.jpg" alt="Wireframe mid-fi du nouveau menu de navigation" />
+                </button>
+                <button onclick="changeImage(2)" aria-label="Voir wireframe 2" data-img="../../img/Amazon-Wireframe_mid-fi_2.jpg" data-alt="Wireframe 2">
+                    <img src="../../img/Amazon-Wireframe_mid-fi_2.jpg" alt="Wireframe mid-fi des catégories dans la barre de recherche par ordre alphabétique" />
+                </button>
+                <button onclick="changeImage(3)" aria-label="Voir wireframe 3" data-img="../../img/Amazon-Wireframe_mid-fi_3.jpg" data-alt="Wireframe 3">
+                    <img src="../../img/Amazon-Wireframe_mid-fi_3.jpg" alt="Wireframe mid-fi des catégories dans la barre de recherche selon l'ordre du menu de navigation" />
+                </button>
+            </div>
         </div>
     </section>
     
@@ -747,7 +810,7 @@
                     <div class="text-collapse">
                     <p><strong>Pour aller plus loin</strong> dans cette phase de test, il serait intéressant de procéder à la fois à un A/B Testing et une étude d'usabilité auprès d'un échantillonnage plus important d'utilisateurs variés et dont l'expérience de l'interface d'Amazon serait diversifiée. Dans cette phase de test, on pourrait reproduire schématiquement les différentes catégories de produit et leur architecture, sur deux prototypes au design similaire : l'un de l'interface actuelle du site web d'Amazon, et l'autre de la solution proposé. On demanderait alors aux utilisateurs de retrouver un type de produit à travers les différentes catégories et sous catégorie, en évaluant le temps passé, le nombre d'erreurs, les retours à la catégorie parent, etc. En procédant de la même manière pour les 2 prototypes, on parviendra à déterminer quelle proposition semble la plus cohérente auprès des utilisateurs français.</p>
                     </div>
-                    <button class="read-more" aria-expanded="false">Lire plus</button>
+                    <button class="read-more" aria-expanded="false">Lire plus<i class="fas fa-chevron-down"></i></button>
                 </div>
                 
                 <div class="image-container">

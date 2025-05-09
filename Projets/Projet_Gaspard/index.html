@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Rouyer - Portfolio - Projet Amazon</title>
+    <link rel="icon" type="image/png" href="../../img/JeanRouyer_AvatarIcon_52px.png">
+
+    <!-- CUSTOM CSS-->
+    <link rel="stylesheet" href="../css/style_projet.css">
+
+
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+    <!-- Javascript-->
+    <script src="../../assets/js/script.js" defer></script>
+    <script src="../js/script_projet.js" defer></script>
+
+    <!-- Panzoom-->
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
+
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/fbf2ab3170.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body id="gaspard">
+    <nav class="navbar">
+        <a href="../../index.html" class="logo"> Jean Rouyer</a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="../../index.html">Accueil</a></li>
+                <li class="active"><a href="../../index.html#projets">Projets</a></li>
+                <li><a href="../../index.html#competences">Compétences & outils</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="menu-hamburger"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+
+    <div class="onglet-side">
+        <a href="#header" class="active"></a>
+        <a href="#contexte"></a>
+        <a href="#pain_points"></a>
+        <a href="#solution"></a>
+        <a href="#conclusion"></a>
+    </div>
+
+
+    <section id="header" class="header">
+        <div class="header_background"></div>
+
+        <div class="banner_projets">
+            <img src="../../img/Couverture_projet_Gaspard.jpg" alt="">
+        </div>
+
+        <h1>Création du logo de Gaspard,<br>bar grenoblois centré sur la montagne</h1>     
+    </section>
+
+
+    <section id="intro">
+        <div class="intro_container">
+            <div class="intro_text">
+                <p>Le Gaspard est un bar ayant ouvert il y a peu à Grenoble, fin d'été 2023. Situé au 2 rue de Lionne, en plein centre-ville, la terrasse du Gaspard s'étire sur quelques mètres dans le prolongement du Pont Saint-Laurent, qui enjambe l'Isère.</p>
+                
+                <p>Après quelques mois d'ouverture, le gérant du bar m'a contacté pour la réalisation du futur logo, dont il aurait besoin prochainement pour la communication sur les réseaux, ainsi que pour l'imprimer sur les pulls des employés, sur le store-banne abritant la terrasses, et sur les affiches.</p>
+            </div>
+            
+        
+            <div class="intro_tag">
+                <p><strong>Mots clés liés à ce projet :</strong></p>
+                <div class="tag_bar">
+                    <span class="tag_primary">Design graphique</span>
+                    <span class="tag_primary">Création de logo</span>
+                    <span class="tag_primary">Outils vectoriels</span>
+                    <span class="tag_primary">Logo de bar</span>
+                    <span class="tag_primary">Enseigne</span>
+                    <span class="tag_primary">Brand Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contexte" class="box-section">
+        <h2>Contexte du projet</h2>
+        <div>
+            <ul class="container">
+                <div class="card"><li><h3>Période : </h3><p>Novembre 2023</p></li></div>
+                <div class="card"><li><h3>Client : </h3><p>Gérant associé du Gaspard</p></li></div>
+                <div class="card"><li><h3>Collaborateurs : </h3><p>Essentiellement avec le gérant du bar</p></li></div>
+            </ul>
+        </div>
+        <div class="time-bars" data-max="12">
+            <h3>Temps passé par tâche</h3>
+            <div class="time-bar">
+                <div class="time-bar-label">Définition des attentes business et du style</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="3"></div>
+                </div>
+                <div class="time-value">1h30</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Premiers croquis</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="2"></div>
+                </div>
+                <div class="time-value">1h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Conception vectorielle</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="10"></div>
+                </div>
+                <div class="time-value">5h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Itération du logo</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="4"></div>
+                </div>
+                <div class="time-value">2h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Exportation des différents livrables</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="2"></div>
+                </div>
+                <div class="time-value">1h</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="UX research">
+        
+        <div class="collapsible-section">
+            <h2 class="collapsible-trigger">Analyse de l'identité du bar
+                <button class="toggle-section" aria-expanded="false" aria-controls="bar-observations">Lire plus
+                    <i class="fas fa-chevron-down"aria-hidden="true"></i> 
+                </button>
+            </h2>
+
+            <div id="bar-observations" class="gallery collapsible-content">
+                <div class="main-image">
+                    <button class="zoom-trigger" aria-label="Zoomer l'image principale">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </button>
+                    <img src="../../img/Gaspard_PhotoBar_1.jpg" alt="Devanture du bar et terrasse"/>
+                </div>
+                <div class="thumbnails">
+                    <button aria-label="Voir la photo 1" data-img="../../img/Gaspard_PhotoBar_1.jpg" data-alt="Devanture du bar et de sa terrasse">
+                        <img src="../../img/Gaspard_PhotoBar_1.jpg" alt="Aperçu réduit de la devanture du bar et de sa terrasse" />
+                    </button>
+                    <button aria-label="Voir la photo 2" data-img="../../img/Gaspard_PhotoBar_2.jpg" data-alt="Une table massive en bois à l'entrée, et le nom du bar peint à la main sur le mur, sous une longue chaine de montagne">
+                        <img src="../../img/Gaspard_PhotoBar_2.jpg" alt="Aperçu réduit de l'intérieur du bar (1)" />
+                    </button>
+                    <button aria-label="Voir la photo 3" data-img="../../img/Gaspard_PhotoBar_3.jpg" data-alt="La pierre et le bois des murs de la salle encadrent une mutlitude de table et de chaises dépareillées, reproduisant le style rustique d'un refuge de montagne">
+                        <img src="../../img/Gaspard_PhotoBar_3.jpg" alt="Aperçu réduit de l'intérieur du bar (2)" />
+                    </button>
+                    <button aria-label="Voir la photo 4" data-img="../../img/Gaspard_PhotoBar_4.jpg" data-alt="La tireuse à bière, elle aussi en bois">
+                        <img src="../../img/Gaspard_PhotoBar_4.jpg" alt="Aperçu réduit de l'intérieur du bar (3)" />
+                    </button>
+                    <button aria-label="Voir la photo 4" data-img="../../img/Gaspard_PhotoBar_5.jpg" data-alt="La bar et sa grande baie vitrée, vu depuis la mezzanine">
+                        <img src="../../img/Gaspard_PhotoBar_5.jpg" alt="Aperçu réduit de l'intérieur du bar (4)" />
+                    </button>
+                    <button aria-label="Voir la photo 4" data-img="../../img/Gaspard_PhotoBar_6.jpg" data-alt="Planche apéritifs particulièrement chargée de charcuterie, de fromages, des fruits et de biscuits apéritifs">
+                        <img src="../../img/Gaspard_PhotoBar_6.jpg" alt="Aperçu réduit de l'intérieur du bar (5)" />
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="pain_points" class="box-section">
+        <h2>Les objectifs</h2>
+        <div class="container">
+            <div class="card" tabindex="0">
+                <h4>Faire émerger l’esprit montagnard du lieu à travers une identité forte.</h4>
+                <div class="description">
+                    <p>Le logo devait évoquer immédiatement l’univers de l’alpinisme et des sommets, en écho à la décoration du bar et à son ancrage grenoblois.</p>
+                </div>
+            </div>
+            <div class="card" tabindex="0">
+                <h4>Créer un symbole authentique, lisible et reconnaissable.</h4>
+                <div class="description">
+                    <p>Pensé pour être décliné sur différents supports — enseigne, menus, réseaux sociaux, pull des employés — le logo devait rester mémorable, lisible et distinctif, même à petite échelle.</p>
+                </div>
+            </div>
+            <div class="card" tabindex="0">
+                <h4>Insuffler la personnalité unique du lieu au logo, entre caractère affirmé et convivialité.</h4>
+                <div class="description">
+                    <p>Le nom "Gaspard" est tiré entre autre de Gaspard de la Meije : le logo devait refléter une personnalité forte, capable de marquer les esprits et de porter l’héritage des grandes figures de la montagne, tout en restant accessible et chaleureuse, à l’image du bar lui-même.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="solution">
+        <h2>Solution proposée</h2>
+
+        <h3 class="puce-circle">Refonte de l'architecture de l'information du site</h3>
+        <div class="schema-wrapper" data-schema-id="schema3">
+            <div class="schema-overlay">
+                <p>Cliquer pour afficher le schéma en grand</p>
+            </div>
+            <img src="../../img/Gaspard_iterations-logos.svg" alt="Itérations des différentes propositions de logo (zoomable)" class="schema-image" />
+        </div>
+
+        <div id="modal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+              <button id="closeModal" aria-label="Fermer"><i class="fas fa-times"></i></button>
+              <div class="zoom-container" id="zoomContainer">
+                <img id="zoomImg" />
+                <div class="mini-map" id="miniMap">
+                  <img id="miniMapImg" />
+                  <div class="view-rectangle" id="viewRectangle"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="explications">
+            <div class="text-collapse">
+                <p>Le logo final est l’aboutissement d’un travail d’exploration riche, nourri à la fois par les souhaits du gérant et par des recherches formelles variées. À l’origine, celui-ci avait peint à la main une silhouette de la Meije sur la vitrine du bar – un emblème fort, mais encore incertain. Cette montagne, véritable repère affectif pour lui, est devenue le point d’ancrage du projet.</p>
+
+
+                <p>L’illustration du sommet a été réalisée à partir d’une vectorisation fidèle de la Meije, puis stylisée pour conserver sa force évocatrice tout en assurant une bonne lisibilité. Le choix du noir et blanc s’est imposé naturellement : il renforce le contraste, affirme l’identité du lieu, et ouvre la voie à des usages futurs comme la gravure laser ou la pyrogravure – un clin d’œil aux matières brutes et chaleureuses qui évoquent l’univers montagnard.</p>
+                    
+                <p>Plusieurs pistes ont été testées : l’ajout de trois verres, initialement présents sur la vitrine, n’apportait pas la clarté attendue. De même, l’intégration de la mention "bar & planche" complexifiait inutilement la composition. Le cercle, quant à lui, a été décliné sous différentes formes – plus ou moins ouvert, ou même transformé en verre à pied pour souligner l’activité de bar – avant de revenir à une version plus simple, permettant au nom et au dessin de respirer pleinement.</p>
+            </div>
+            <button class="read-more" aria-expanded="false">Lire plus <i class="fas fa-chevron-down"></i></button>
+        </div>
+
+
+
+        <h3 class="puce-circle">Comparaison du logo Gaspard</h3>
+        <div class="slider-container" id="slider">
+            <img src="../../img/Gaspard_logo-light.svg" alt="Logo fond blanc">
+            <img src="../../img/Gaspard_logo-dark.svg" alt="Logo fond noir" class="top-image" id="topImage">
+            <div class="slider-handle" id="sliderHandle"></div>
+        </div>
+        <div class="explications">
+            <div>
+                <p>Le logo retenu s’appuie sur une silhouette stylisée de la Meije, montagne emblématique choisie par le gérant pour sa valeur personnelle. Le nom du bar s’inscrit dans une calligraphie inspirée des anciennes signalétiques d’altitude, conférant au visuel un caractère à la fois authentique et accueillant. L’ensemble, contenu dans un cercle partiellement ouvert, remplit pleinement les objectifs fixés : évoquer la montagne, affirmer une identité mémorable et transmettre l’ambiance chaleureuse du lieu.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="testing">
+        <h2>Test de la solution</h2>
+        <div>
+            <p>Pour s'assurer de la viabilité de la solution proposé, il faut effectuer une phase de test utilisateur. Cette phase n'a pas encore été effectué auprès d'un échantillon suffisamment important pour être représentative. Néanmoins l'échantillon testé à approuvé cette nouvelle architecture de l'information et l'UX writting de celle-ci</p>
+            
+            <div class="testing_method">
+                <div class="image-container">
+                    <img src="../../img/Gaspard_PhotoBar_7.jpg" alt="Schéma d’A/B testing">
+                    <div class="image-credit">
+                      Image © <a href="https://www.seobility.net/en/wiki/AB_Testing" target="_blank" rel="noopener">Seobility</a>,
+                      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+                      – modifiée (recadrage)
+                    </div>
+                </div>
+                
+                <div class="image-container">
+                    <img src="../../img/Gaspard_NouveauLogo_Pull.jpg" alt="Schéma d’A/B testing">
+                    <div class="image-credit">
+                      Image © <a href="https://www.seobility.net/en/wiki/AB_Testing" target="_blank" rel="noopener">Seobility</a>,
+                      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+                      – modifiée (recadrage)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="conclusion" class="box-section">
+        <h2>Ma conclusion du projet</h2>
+        <div>
+            <div class="intro_conclusion">
+                <p>Ce projet d’audit ergonomique de l’interface Amazon a été une véritable exploration de l’interaction entre l’utilisateur et l’information, ainsi que le défi de rendre un site ultra-populaire plus intuitif, efficace et humain. Réorganiser la navigation et simplifier les parcours sans sacrifier la richesse de l’offre d'Amazon était l'occasion pour moi de tester ma capacité à anticiper les besoins des utilisateurs tout en respectant leurs habitudes et leurs conventions culturelles.</p>
+
+                <p></p>Voici les challenges relevés et ce que j'en retiens :</p>
+            </div>
+            <ul class="container">
+                <div class="card"><li><h3>Réaliser un audit ergonomique</h3>
+                    <div class="learn">
+                        <ul>
+                            <li>Bien choisir/formuler les critères évalués</li>
+                            <li>Appliquer une certaine rigeur pour que l'audit soit le moins subjectif possible</li>
+                            <li>Détailler les commentaires de l'évaluation pour retranscrire les bons éléments et les points de frictions aux collaborateurs/clients</li>
+                            <li>Relativiser sur l'impact négatif d'un critère mal respecté, car tous ne sont pas des points de frictions</li>
+                        </ul>
+                    </div></li>
+                </div>
+                <div class="card"><li><h3>Hierarchiser l'information</h3>
+                    <div class="learn">
+                        <ul>
+                            <li>Utiliser la loi de Miller ("7 ± 2") pour faciliter la compréhension et la mémorisation pour comparer des items</li>
+                            <li>Simplifier les choix pour l'utilisateur</li>
+                            <li>Limiter les catégories et sous-catégories de produits en 3 niveaux d'imbrications maximum</li>
+                            <li>Conserver la même hierarchie sur tout le site pour maintenir la cohérence</li>
+                        </ul>
+                    </div></li>
+                </div>
+                <div class="card"><li><h3>Communiquer avec les Utilisateurs (UX writing)</h3>
+                    <div class="learn">
+                        <ul>
+                            <li>Utiliser un vocabulaire clair, des dénominations explicites qui utilisent les codes et conventions sémantiques de l'utilisateur</li>
+                            <li>Appliquer avec rigeur la cohérence des codes <i>(ex : "&" ou "et", mais d'alternance entre les deux)</i></li>
+                            
+                        </ul>
+                    </div></li>
+                </div>
+                
+            </ul>
+        </div>
+        <div>
+            <img src="" alt="">
+            <p></p>
+        </div>
+    </section>
+
+
+
+    <section class="footer" id="contact">
+        <div id="footer_width">
+            <h1>Contact</h1>
+            <div id="contact_grid">
+                <div class="remerciements">
+                    <img src="../../img/JeanRouyer_Avatar.jpg" alt="Avatar représentant Jean en Astronaute">
+                    <p>Merci d'avoir consulté mon profil !</p>
+                    <p>N'hésitez pas à le partager, à télécharger mon CV ou à me contacter par mail pour tout renseignement complémentaire.</p>
+                    <p>A bientôt !</p>
+                </div>
+                <div class="interagir">
+                    <h2>Mon Résumé</h2>
+                    
+                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025-light.pdf" download="ROUYER-Jean_CV_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">Télécharger mon CV<i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                    <p><i>CV en PDF (interactif) : 712&nbsp;ko</i></p>
+                    
+                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025-light_recherche-Alternance.pdf" download="ROUYER-Jean_CV-Alternance_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">CV pour Alternance<i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                    <p><i>CV Alternance en PDF : 712&nbsp;ko</i></p>
+                </div>
+                <div class="interagir">
+                    <h2>Me joindre facilement</h2>
+                    <a href="mailto:jeanrouyer24@gmail.com?subject=Visite%20de%20votre%20site&body=Bonjour%20Jean,%0D%0AJ%27ai%20visité%20votre%20site%20et%20je%20me%20permets%20de%20vous%20contacter%20concernant..." class="btn btn-primary" onclick="openMailInNewTab(event)">
+                        Me contacter par mail<i class="fa-solid fa-paper-plane"></i>
+                    </a>
+                    <div class="copy-info" onclick="copyEmail()">
+                        <span id="email-text">jeanrouyer24@gmail.com</span>
+                        <i class="fa-solid fa-copy" aria-hidden="true"></i>
+                    </div>
+                    <span id="copy-feedback" class="sr-only">Adresse mail copiée</span>
+                    <p><i>Prenez contact par mail pour toute demande de renseignements, ou toute réflexion sur votre projet.</i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

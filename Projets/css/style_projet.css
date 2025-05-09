@@ -33,7 +33,8 @@ body.modal-open {
 }
 
 #gaspard {
-    --main-color: #FE9A00;
+    --main-color: oklch(60% 0.118 184.704);
+    --main-color-rgb: 0, 150, 137;
 }
 
 #zonn {
@@ -142,6 +143,35 @@ body.modal-open {
     }
 }
 
+/* ONGLET SIDE */
+
+.onglet-side {
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2em;
+    z-index: 12;
+}
+.onglet-side a {
+    height: 0.75rem;
+    width: 0.75rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    border: 3px solid var(--main-color);
+    border-radius: 2em;
+}
+.onglet-side a.active {
+    background-color: var(--main-color);
+}
+
+/* Gestion du menu responsive */
+@media screen and (max-width: 900px) {
+    .onglet-side {
+        display: none;
+    }
+}
 
 
 
@@ -315,6 +345,11 @@ button {
 /* Icône dans le bouton */
 .btn i {
     margin-left: 1em;
+}
+
+.collapsible-trigger button {
+    padding: 0 0 0 1rem;
+    color: var(--main-color);
 }
 
 
@@ -497,7 +532,7 @@ section #intro {
 }
   
 .bar-fill {
-    background-color: #FE9A00;
+    background-color: var(--main-color);
     height: 50%;
     margin: 0.25rem;
     width: 0%;
@@ -506,7 +541,7 @@ section #intro {
 }
 
 #amazon .bar-fill {
-    background-color: #FE9A00;
+    background-color: var(--main-color);
 }
 
 .time-value {
@@ -532,68 +567,100 @@ section #intro {
 
 
 
-
-
-
-/*  PAIN POINTS  */
- 
-#pain_points .container {
-    align-items: start; /* Important pour éviter l'étirement vertical */
+/* UX RESEARCH  */
+/* ---------- COLLAPSIBLE SECTION ---------- */
+.collapsible-content {
+    display: none;
+    transition: all 0.3s ease;
 }
   
-#pain_points .card {
-    border: 1px solid oklch(92% 0.004 286.32);
-    transition: all 0.3s ease-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.collapsible-content.open {
+    display: block;
+}
+  
+.toggle-section {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.mainScreenshot {
+    
+}
+
+/* ---------- GALLERY ---------- */
+.gallery {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.main-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.main-image {
     position: relative;
 }
   
-#pain_points .card:focus,
-#pain_points .card:hover {
-    box-shadow: 0px 0px 12px rgba(var(--main-color-rgb),0.4);
+.zoom-trigger {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 0.6rem;
+    background:  rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 2;
 }
-  
-#pain_points .description {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-out;
-    pointer-events: none; /* pour éviter les soucis de clic pendant l'animation */
-}
-  
-/* ✅ Affiche au hover sur desktop */
-@media (hover: hover) and (pointer: fine) {
-    #pain_points .card:hover .description {
-        margin-top: 1rem;
-        max-height: 300px;
-        pointer-events: auto;
-    }
-}
-  
-/* ✅ Affiche au clic ou via clavier (grâce au JS) */
-#pain_points .card.active .description {
+
+.thumbnails {
     margin-top: 1rem;
-    max-height: 300px;
-    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
-#pain_points h4 {
-    margin-bottom: 0.25rem;
-    text-transform: none;
+.thumbnails button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 2px;
 }
-#pain_points p {
-    margin-bottom: 0;
+
+.thumbnails img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
 }
 
+.thumbnails button:focus img,
+.thumbnails button:hover img {
+    border-color: var(--main-color, #FE9A00);
+    transform: scale(1.05);
+}
 
-
-
-
-/*  SOLUTION  */
 /* ----------- MODALE ----------- */
 body.modal-open {
     overflow: hidden;
+}
+
+.schema-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap; /* utile pour le responsive */
 }
 
 .schema-wrapper {
@@ -660,7 +727,7 @@ body.modal-open {
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 0.5rem 0.9rem;
+    padding: 0.5rem 0.75rem;
     background:  rgba(0, 0, 0, 0.8);
     border: none;
     border-radius: 0.5rem;
@@ -711,6 +778,64 @@ body.modal-open {
     box-sizing: border-box;
 }
 
+
+
+
+
+/*  PAIN POINTS  */
+ 
+#pain_points .container {
+    align-items: start; /* Important pour éviter l'étirement vertical */
+}
+  
+#pain_points .card {
+    border: 1px solid oklch(92% 0.004 286.32);
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+  
+#pain_points .card:focus,
+#pain_points .card:hover {
+    box-shadow: 0px 0px 12px rgba(var(--main-color-rgb),0.4);
+}
+  
+#pain_points .description {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    pointer-events: none; /* pour éviter les soucis de clic pendant l'animation */
+}
+  
+/* ✅ Affiche au hover sur desktop */
+@media (hover: hover) and (pointer: fine) {
+    #pain_points .card:hover .description {
+        margin-top: 1rem;
+        max-height: 300px;
+        pointer-events: auto;
+    }
+}
+  
+/* ✅ Affiche au clic ou via clavier (grâce au JS) */
+#pain_points .card.active .description {
+    margin-top: 1rem;
+    max-height: 300px;
+    pointer-events: auto;
+}
+
+#pain_points h4 {
+    margin-bottom: 0.25rem;
+    text-transform: none;
+}
+#pain_points p {
+    margin-bottom: 0;
+}
+
+
+
+/*  SOLUTION  */
 
 
 .explications {
@@ -822,54 +947,49 @@ body.modal-open {
     accent-color: #6366F1; /* violet clair par défaut */
     cursor: pointer;
 }
-  
-  
 
 
-/*  WIREFRAME */
-.gallery {
-    max-width: 800px;
-    margin: 2rem auto;
-}
-.main-image img {
+
+/* Juxtapose */
+.slider-container {
+    position: relative;
     width: 100%;
-    max-height: 500px;
-    object-fit: contain;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
+    border-radius: 1rem;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
 }
-
-.thumbnails {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.thumbnails button {
-    border: none;
-    background: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 2px;
-}
-
-.thumbnails img {
-    width: 80px;
-    height: 60px;
+  
+.slider-container img,
+.slider-container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
     object-fit: cover;
-    border-radius: 0.5rem;
-    border: 2px solid transparent;
-    transition: border-color 0.2s, transform 0.2s;
 }
-
-.thumbnails button:focus img,
-.thumbnails button:hover img {
-    border-color: var(--main-color, #FE9A00);
-    transform: scale(1.05);
+  
+.top-image {
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.05s ease-out;
 }
+  
+.slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--main-color);
 
+    cursor: ew-resize;
+    z-index: 10;
+    transition: left 0.05s ease-out;
+}
 
 
 
