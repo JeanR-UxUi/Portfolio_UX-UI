@@ -13,7 +13,9 @@ function centerCard() {
     hero.style.paddingTop = `${Math.max(offset, 0)}px`;
   }
   
-  window.addEventListener('load', centerCard);
+  window.addEventListener('load', () => {
+    setTimeout(centerCard, 100); // léger délai
+  });
   window.addEventListener('resize', centerCard);
 
 
@@ -368,16 +370,44 @@ const slider = document.getElementById('slider');
 const topImage = document.getElementById('topImage');
 const handle = document.getElementById('sliderHandle');
 
-slider.addEventListener('mousemove', (e) => {
-  const rect = slider.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const percent = (x / rect.width) * 100;
 
-  topImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-  handle.style.left = `${percent}%`;
-});
+if (slider && topImage && handle) {
+  slider.addEventListener('mousemove', (e) => {
+    const rect = slider.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const percent = (x / rect.width) * 100;
 
-slider.addEventListener('mouseleave', () => {
-  topImage.style.clipPath = `inset(0 50% 0 0)`;
-  handle.style.left = `50%`;
+    topImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+    handle.style.left = `${percent}%`;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    topImage.style.clipPath = `inset(0 50% 0 0)`;
+    handle.style.left = `50%`;
+  });
+}
+
+
+// ========================
+// ✅ 9. ROADMAP
+// ========================
+document.addEventListener("DOMContentLoaded", () => {
+  const tasks = document.querySelectorAll(".task");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.4 // ajustable pour + ou - de déclenchement
+    }
+  );
+
+  tasks.forEach((task) => observer.observe(task));
 });
