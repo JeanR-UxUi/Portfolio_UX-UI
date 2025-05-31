@@ -8,17 +8,10 @@
 
     <!-- CUSTOM CSS-->
     <link rel="stylesheet" href="../css/style_projet.css">
-
-
-    <!-- jQuery-->
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     
     <!-- Javascript-->
     <script src="../../assets/js/script.js" defer></script>
     <script src="../js/script_projet.js" defer></script>
-
-    <!-- Panzoom-->
-    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
 
     <!-- Font Awesome-->
     <script src="https://kit.fontawesome.com/fbf2ab3170.js" crossorigin="anonymous"></script>
@@ -40,11 +33,11 @@
     </nav>
 
     <div class="onglet-side">
-        <a href="#header" class="active"></a>
-        <a href="#contexte"></a>
-        <a href="#pain_points"></a>
-        <a href="#solution" data-scroll-target="#ancre_solution_Logo"></a>
-        <a href="#conclusion"></a>
+        <a href="#header" class="active" aria-label="Aller à l'en-tête" data-tooltip="Aller à l'en-tête"></a>
+        <a href="#contexte" aria-label="Aller à la section Contexte du projet" data-tooltip="Aller à la section Contexte du projet"></a>
+        <a href="#pain_points" aria-label="Aller à la section Objectifs du logo" data-tooltip="Aller à la section Objectifs du logo"></a>
+        <a href="#solution" aria-label="Aller à la section Solution proposée" data-tooltip="Aller à la section Solution proposée" data-scroll-target="#ancre_solution_Logo"></a>
+        <a href="#conclusion" aria-label="Aller à la section Conclusion" data-tooltip="Aller à la section Conclusion"></a>
     </div>
 
 
@@ -143,10 +136,14 @@
 
             <div id="bar-observations" class="gallery collapsible-content open">
                 <div class="main-image">
+                    <button class="gallery-prev" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
+
                     <button class="zoom-trigger" aria-label="Zoomer l'image principale">
                         <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                     </button>
                     
+                    <button class="gallery-next" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
+
                     <div class="image-container">
                         <img src="../../img/Gaspard_PhotoBar_1.jpg" alt="Devanture du bar et terrasse"/>
                         <div class="image-credit">
@@ -173,6 +170,35 @@
                     <button aria-label="Voir la photo 4" data-img="../../img/Gaspard_PhotoBar_6.jpg" data-alt="Planche apéritifs particulièrement chargée de charcuterie, de fromages, des fruits et de biscuits apéritifs">
                         <img src="../../img/Gaspard_PhotoBar_6.jpg" alt="Aperçu réduit de l'intérieur du bar (5)" />
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+              <button id="closeModal" aria-label="Fermer"><i class="fas fa-times"></i></button>
+
+              <button id="modal-prev" aria-label="Image précédente" class="modal-nav">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+
+              <button id="modal-next" aria-label="Image suivante" class="modal-nav">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              
+              <div class="zoom-container" id="zoomContainer">
+                <img id="zoomImg" />
+                <div class="mini-map" id="miniMap">
+                  <img id="miniMapImg" />
+                  <div class="view-rectangle" id="viewRectangle"></div>
+                </div>
+
+                <div class="modal-help" aria-hidden="true">
+                    <p>
+                      <kbd>⤢</kbd> Scroll pour zoomer &nbsp;·&nbsp;
+                      <kbd>←↑↓→</kbd> pour déplacer &nbsp;·&nbsp;
+                      <kbd>Échap</kbd> pour fermer
+                    </p>
                 </div>
             </div>
         </div>
@@ -214,19 +240,6 @@
                 <p>Cliquer pour afficher le schéma en grand</p>
             </div>
             <img src="../../img/Gaspard_iterations-logos.svg" alt="Itérations des différentes propositions de logo (zoomable)" class="schema-image" />
-        </div>
-
-        <div id="modal" class="modal" aria-hidden="true">
-            <div class="modal-content">
-              <button id="closeModal" aria-label="Fermer"><i class="fas fa-times"></i></button>
-              <div class="zoom-container" id="zoomContainer">
-                <img id="zoomImg" />
-                <div class="mini-map" id="miniMap">
-                  <img id="miniMapImg" />
-                  <div class="view-rectangle" id="viewRectangle"></div>
-                </div>
-              </div>
-            </div>
         </div>
 
 
@@ -333,24 +346,25 @@
                 <div class="interagir">
                     <h2>Mon Résumé</h2>
                     
-                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025-light.pdf" download="ROUYER-Jean_CV_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">Télécharger mon CV<i class="fa-solid fa-file-pdf"></i>
+                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025.pdf" download="ROUYER-Jean_CV_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">Télécharger mon CV<i class="fa-solid fa-file-pdf"></i>
                     </a>
-                    <p><i>CV en PDF (interactif) : 712&nbsp;ko</i></p>
+                    <p><i>CV en PDF (interactif) : 677&nbsp;ko</i></p>
                     
-                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025-light_recherche-Alternance.pdf" download="ROUYER-Jean_CV-Alternance_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">CV pour Alternance<i class="fa-solid fa-file-pdf"></i>
+                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_2025_recherche-Alternance-en-contrat-d-aprentissage.pdf" download="ROUYER-Jean_CV-Alternance-en-Apprentissage_UX-UI-Designer.pdf" class="btn btn-primary">CV pour Alternance<i class="fa-solid fa-file-pdf"></i>
                     </a>
-                    <p><i>CV Alternance en PDF : 712&nbsp;ko</i></p>
+                    <p><i>CV Alternance en PDF : 681&nbsp;ko</i></p>
                 </div>
                 <div class="interagir">
                     <h2>Me joindre facilement</h2>
                     <a href="mailto:jeanrouyer24@gmail.com?subject=Visite%20de%20votre%20site&body=Bonjour%20Jean,%0D%0AJ%27ai%20visité%20votre%20site%20et%20je%20me%20permets%20de%20vous%20contacter%20concernant..." class="btn btn-primary" onclick="openMailInNewTab(event)">
                         Me contacter par mail<i class="fa-solid fa-paper-plane"></i>
                     </a>
-                    <div class="copy-info" onclick="copyEmail()">
+                    <button class="copy-info" onclick="copyEmail()" aria-label="Copier l'adresse email">
                         <span id="email-text">jeanrouyer24@gmail.com</span>
                         <i class="fa-solid fa-copy" aria-hidden="true"></i>
-                    </div>
-                    <span id="copy-feedback" class="sr-only">Adresse mail copiée</span>
+                      </button>
+                      
+                      <p id="copy-feedback" class="sr-only" aria-live="polite" role="status"></p>
                     <p><i>Prenez contact par mail pour toute demande de renseignements, ou toute réflexion sur votre projet.</i></p>
                 </div>
             </div>

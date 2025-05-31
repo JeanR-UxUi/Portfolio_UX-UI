@@ -154,12 +154,81 @@ function openMailInNewTab(event) {
 // ========================
 function copyEmail() {
     const email = "jeanrouyer24@gmail.com";
+    const feedback = document.getElementById("copy-feedback");
+  
+    // Tentative de copie
     navigator.clipboard.writeText(email).then(() => {
-      const feedback = document.getElementById("copy-feedback");
-      feedback.innerText = "Adresse mail copiée dans le presse-papiers ✔️";
-      feedback.classList.remove("sr-only");
-      setTimeout(() => {
-        feedback.classList.add("sr-only");
-      }, 2000);
+      // ✅ Succès
+      showFeedback("Adresse mail copiée dans le presse-papiers", "success", feedback);
+    }).catch((err) => {
+      // ❌ Échec (navigateur trop ancien ou refus)
+      console.error("Erreur lors de la copie :", err);
+      showFeedback("Impossible de copier l'adresse mail. Essayez manuellement.", "error", feedback);
     });
-  }
+}
+
+function showFeedback(message, type, element) {
+    element.innerText = message;
+    element.classList.remove("sr-only");
+    element.setAttribute("role", "status"); // Annonce immédiate pour lecteur d’écran
+    element.setAttribute("aria-live", "polite");
+  
+    // Ajout classe de style
+    element.classList.remove("error", "success");
+    element.classList.add(type);
+  
+    // Disparition après 2 secondes
+    setTimeout(() => {
+      element.classList.add("sr-only");
+    }, 2000);
+}
+
+// ========================
+// ✅ 7. TOOLTIP : positionnement dynamique
+// ========================
+document.addEventListener('DOMContentLoaded', () => {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip-flyout';
+    document.body.appendChild(tooltip);
+  
+    const showTooltip = (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (!target) return;
+  
+      const text = target.getAttribute('data-tooltip');
+      tooltip.textContent = text;
+      tooltip.classList.add('visible');
+  
+      const padding = 8;
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const viewportWidth = window.innerWidth;
+  
+      let left = e.clientX + padding;
+      if (left + tooltipRect.width > viewportWidth - padding) {
+        left = e.clientX - tooltipRect.width - padding;
+      }
+  
+      const top = e.clientY;
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top = `${top}px`;
+    };
+  
+    const hideTooltip = () => {
+      tooltip.classList.remove('visible');
+    };
+  
+    document.addEventListener('mousemove', showTooltip);
+    document.addEventListener('focusin', (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (target) {
+        const rect = target.getBoundingClientRect();
+        tooltip.textContent = target.getAttribute('data-tooltip');
+        tooltip.style.left = `${rect.right + 8}px`;
+        tooltip.style.top = `${rect.top + rect.height / 2}px`;
+        tooltip.classList.add('visible');
+      }
+    });
+    document.addEventListener('focusout', hideTooltip);
+    document.addEventListener('mouseout', hideTooltip);
+});
+  

@@ -145,6 +145,26 @@ body{
     }
 }
 
+
+/* Tooltip dynamiquement injecté */
+.tooltip-flyout {
+    position: fixed;
+    background-color: #333;
+    color: #fff;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 0.3rem;
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease;
+}
+.tooltip-flyout.visible {
+    opacity: 1;
+}
+
 /* BOUTON DARK MODE */
 
 
@@ -312,7 +332,7 @@ button {
     font-weight: 600;
 }
 .grey_i {
-    color: #9F9FA9;
+    color: oklch(70.8% 0 0);
     font-style: italic;
 }
 
@@ -719,36 +739,45 @@ section.mid .titre h1 {
 
 /* copie adresse dans le presse papier */
 .copy-info {
+    all: unset; /* Réinitialise tout : padding, border, bg, etc. */
     display: flex;
     align-items: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
     cursor: pointer;
-    color: var(--main-color-site); /* Couleur correspondante à ton design */
-  }
+    color: var(--main-color-site);
+    font: inherit;
+}
   
-  .copy-info i {
+.copy-info i {
     margin-left: 1rem;
     font-size: 1.2rem;
-  }
+}
   
-  .copy-info:hover {
+.copy-info:hover {
     text-decoration: underline;
-  }
+}
   
-  #copy-feedback {
-    margin-top: 0.5rem;
-    color: green;
-    font-size: 0.9rem;
-  }
-  
-  .sr-only {
+.sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
     padding: 0;
+    margin: 0;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip: rect(0 0 0 0);
     white-space: nowrap;
     border: 0;
-  }
+}
+
+#copy-feedback.success {
+    color: oklch(87.1% 0.15 154.449);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#copy-feedback.error {
+    color: oklch(80.8% 0.114 19.571);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}

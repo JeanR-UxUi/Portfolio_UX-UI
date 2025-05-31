@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ========================
-// ✅ 4. ZOOM SCHEMA
+// ✅ 4. ZOOM SCHEMA MODALE (centrée, avec mini-map)
 // ========================
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("modal");
@@ -92,72 +92,89 @@ document.addEventListener("DOMContentLoaded", () => {
   let isDragging = false;
   let start = { x: 0, y: 0 };
   let naturalWidth, naturalHeight;
+  let currentZoomIndex = 0;
 
-  // Ouvrir la modale (1)
-  document.querySelectorAll(".schema-wrapper").forEach(wrapper => {
-    wrapper.addEventListener("click", () => {
-      const imgSrc = wrapper.querySelector("img").getAttribute("src");
+  let currentGalleryImages = []; // images de la galerie actuellement ouverte;
 
-      zoomImg.src = imgSrc;
-      miniMapImg.src = imgSrc;
-
-      modal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
-      scale = 1;
-      translate = { x: 0, y: 0 };
-
-      zoomImg.onload = () => {
-        naturalWidth = zoomImg.naturalWidth;
-        naturalHeight = zoomImg.naturalHeight;
-        const aspectRatio = naturalWidth / naturalHeight;
-        miniMap.style.width = "200px";
-        miniMap.style.height = `${200 / aspectRatio}px`;
-        updateTransform();
-      };
-
-      if (zoomImg.complete) zoomImg.onload();
-    });
-  });
-
-  // Ouvrir la modale (2) Bouton "zoom" sur image principale de galerie
-document.querySelectorAll(".zoom-trigger").forEach(button => {
-  button.addEventListener("click", (e) => {
-    e.stopPropagation(); // évite les conflits si un parent a aussi un event
-    const mainImg = button.parentElement.querySelector("img");
-
-    zoomImg.src = mainImg.src;
-    miniMapImg.src = mainImg.src;
-
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-    scale = 1;
-    translate = { x: 0, y: 0 };
+  // 🔁 Fonction centralisée pour charger une image dans la modale
+  function loadZoomedImage(src) {
+    zoomImg.src = src;
+    miniMapImg.src = src;
 
     zoomImg.onload = () => {
       naturalWidth = zoomImg.naturalWidth;
       naturalHeight = zoomImg.naturalHeight;
+
       const aspectRatio = naturalWidth / naturalHeight;
       miniMap.style.width = "200px";
       miniMap.style.height = `${200 / aspectRatio}px`;
+
+      scale = 1;
+
+      // Centrage initial par rapport au container
+      const containerRect = zoomContainer.getBoundingClientRect();
+      const imgWidth = naturalWidth * scale;
+      const imgHeight = naturalHeight * scale;
+
+      translate = {
+        x: (containerRect.width - imgWidth) / 2,
+        y: (containerRect.height - imgHeight) / 2
+      };
+
       updateTransform();
     };
 
     if (zoomImg.complete) zoomImg.onload();
+  }
+
+  // 🎯 Ouvre modale depuis .schema-wrapper
+  document.querySelectorAll(".schema-wrapper").forEach(wrapper => {
+    wrapper.addEventListener("click", () => {
+      const imgSrc = wrapper.querySelector("img").getAttribute("src");
+      openModalWithImage(imgSrc);
+    });
   });
-});
 
-  // Fermer via bouton
+  // 🎯 Ouvre modale depuis bouton zoom
+  document.querySelectorAll('.zoom-trigger').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const gallery = button.closest('.gallery');
+      currentGalleryImages = Array.from(gallery.querySelectorAll('.thumbnails button'));
+
+      const mainImage = gallery.querySelector('.main-image img');
+      const src = mainImage.src;
+      const filename = src.split('/').pop();
+      const index = currentGalleryImages.findIndex(btn =>
+        btn.getAttribute('data-img')?.endsWith(filename)
+      );
+      currentZoomIndex = index >= 0 ? index : 0;
+
+      openModalWithImage(src);
+    });
+  });
+
+  function openModalWithImage(src) {
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    loadZoomedImage(src);
+  
+    // ✅ Extraire uniquement le nom du fichier, pour une comparaison robuste
+    const srcFilename = src.split('/').pop();
+  
+    const isInGallery = currentGalleryImages.some(btn => {
+      const btnFilename = btn.getAttribute("data-img")?.split('/').pop();
+      return btnFilename === srcFilename;
+    });
+  
+    document.getElementById("modal-prev").style.display = isInGallery ? "block" : "none";
+    document.getElementById("modal-next").style.display = isInGallery ? "block" : "none";
+  }
+
+  // 🔒 Fermer la modale
   closeModal.addEventListener("click", closeModalHandler);
-
-  // Fermer via clic sur l’overlay noir
   modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModalHandler();
-  });
-
-  // Fermer via Esc
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModalHandler();
-    handleArrowKeys(e);
   });
 
   function closeModalHandler() {
@@ -165,7 +182,7 @@ document.querySelectorAll(".zoom-trigger").forEach(button => {
     document.body.classList.remove("modal-open");
   }
 
-  // Zoom
+  // 🔍 Zoom à la molette
   zoomContainer.addEventListener("wheel", (e) => {
     e.preventDefault();
     const delta = e.deltaY < 0 ? 0.1 : -0.1;
@@ -183,7 +200,7 @@ document.querySelectorAll(".zoom-trigger").forEach(button => {
     updateTransform();
   });
 
-  // Drag
+  // ✋ Drag pour se déplacer
   zoomContainer.addEventListener("mousedown", (e) => {
     isDragging = true;
     start = { x: e.clientX, y: e.clientY };
@@ -205,29 +222,29 @@ document.querySelectorAll(".zoom-trigger").forEach(button => {
     updateTransform();
   });
 
-  // Flèches du clavier
+  // ⌨️ Navigation clavier : flèches dans l'image + modale
   function handleArrowKeys(e) {
     const step = 20;
     switch (e.key) {
-      case "ArrowLeft":
-        translate.x += step;
-        break;
-      case "ArrowRight":
-        translate.x -= step;
-        break;
-      case "ArrowUp":
-        translate.y += step;
-        break;
-      case "ArrowDown":
-        translate.y -= step;
-        break;
-      default:
-        return;
+      case "ArrowLeft": translate.x += step; break;
+      case "ArrowRight": translate.x -= step; break;
+      case "ArrowUp": translate.y += step; break;
+      case "ArrowDown": translate.y -= step; break;
+      default: return;
     }
     updateTransform();
     e.preventDefault();
   }
 
+  document.addEventListener("keydown", (e) => {
+    if (modal.getAttribute("aria-hidden") === "false") {
+      if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+        handleArrowKeys(e);
+      }
+    }
+  });
+
+  // ♻️ Appliquer la transformation
   function updateTransform() {
     zoomImg.style.transform = `translate(${translate.x}px, ${translate.y}px) scale(${scale})`;
     updateMiniMap();
@@ -257,8 +274,30 @@ document.querySelectorAll(".zoom-trigger").forEach(button => {
     viewRectangle.style.left = `${Math.max(0, Math.min(offsetX, miniMapWidth - rectWidth))}px`;
     viewRectangle.style.top = `${Math.max(0, Math.min(offsetY, miniMapHeight - rectHeight))}px`;
   }
-});
 
+  // 🠔🠖 Navigation modale avec flèches
+  const modalPrev = document.getElementById('modal-prev');
+  const modalNext = document.getElementById('modal-next');
+
+  const updateModalImage = (newIndex) => {
+    const button = currentGalleryImages[newIndex];
+    const newSrc = button.getAttribute('data-img');
+    currentZoomIndex = newIndex;
+    loadZoomedImage(newSrc);
+  };
+
+  modalPrev.addEventListener('click', () => {
+    if (!currentGalleryImages.length) return;
+    const newIndex = (currentZoomIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+    updateModalImage(newIndex);
+  });
+  
+  modalNext.addEventListener('click', () => {
+    if (!currentGalleryImages.length) return;
+    const newIndex = (currentZoomIndex + 1) % currentGalleryImages.length;
+    updateModalImage(newIndex);
+  });
+});
 
 
 
@@ -287,18 +326,50 @@ function toggleMenu(element) {
 // ========================
 // ✅ 6. GALERIE D'IMAGES : avec miniature cliquable
 // ========================
-          // Applique le comportement à chaque galerie
 document.querySelectorAll('.gallery').forEach(gallery => {
   const mainImage = gallery.querySelector('.main-image img');
-  const buttons = gallery.querySelectorAll('.thumbnails button');
+  const thumbnails = gallery.querySelectorAll('.thumbnails button');
+  const zoomButton = gallery.querySelector('.zoom-trigger');
+  const prevBtn = gallery.querySelector('.gallery-prev');
+  const nextBtn = gallery.querySelector('.gallery-next');
 
-  buttons.forEach(button => {
+  let currentIndex = 0;
+
+  const updateMainImage = (index) => {
+    const button = thumbnails[index];
+    const newSrc = button.getAttribute('data-img');
+    const newAlt = button.getAttribute('data-alt');
+    mainImage.src = newSrc;
+    mainImage.alt = newAlt;
+    currentIndex = index;
+  };
+
+  thumbnails.forEach((button, index) => {
     button.addEventListener('click', () => {
-      const newSrc = button.getAttribute('data-img');
-      const newAlt = button.getAttribute('data-alt');
-      mainImage.src = newSrc;
-      mainImage.alt = newAlt;
+      updateMainImage(index);
     });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    const newIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+    updateMainImage(newIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const newIndex = (currentIndex + 1) % thumbnails.length;
+    updateMainImage(newIndex);
+  });
+
+  // Accessibilité : flèches clavier
+  gallery.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      prevBtn.click();
+    }
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      nextBtn.click();
+    }
   });
 });
 

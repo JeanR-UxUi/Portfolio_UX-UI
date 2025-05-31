@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,11 +40,11 @@
     </nav>
 
     <div class="onglet-side">
-        <a href="#header" class="active"></a>
-        <a href="#contexte"></a>
-        <a href="#pain_points"></a>
-        <a href="#solution"></a>
-        <a href="#conclusion"></a>
+        <a href="#header" class="active" aria-label="Aller à l'en-tête" data-tooltip="Aller à l'en-tête"></a>
+        <a href="#contexte" aria-label="Aller à la section Contexte du projet" data-tooltip="Aller à la section Contexte du projet"></a>
+        <a href="#pain_points" aria-label="Aller à la section Pain Points" data-tooltip="Aller à la section Pain Points"></a>
+        <a href="#solution" aria-label="Aller à la section Solution proposée" data-tooltip="Aller à la section Solution proposée"></a>
+        <a href="#conclusion" aria-label="Aller à la section Conclusion" data-tooltip="Aller à la section Conclusion"></a>
     </div>
 
     <section id="header" class="header">
@@ -90,42 +90,49 @@
                 <div class="card"><li><h3>Collaborateurs : </h3><p> - Membres de <strong>l'Equipe Développement</strong> (Ingénieurs, BEM, chefs de projet, responsable Pôle Production),<br>- Pôle Production Industrielle,<br>- Pôle Tapisserie,<br>- Pôle QSEE,<br>- Pôle Service Client,<br>- Pôle Communication</p></li></div>
             </ul>
         </div>
-        <div class="time-bars" data-max="12">
+        <div class="time-bars" data-max="7">
             <h3>Temps passé par tâche</h3>
             <div class="time-bar">
-                <div class="time-bar-label">Création de la grille d'audit</div>
+                <div class="time-bar-label">Compréhension enjeux des espaces de coworking et besoins utilisateurs</div>
                 <div class="bar-container">
-                    <div class="bar-fill" data-value="5"></div>
+                    <div class="bar-fill" data-value="4"></div>
                 </div>
-                <div class="time-value">5h</div>
+                <div class="time-value">70h</div>
             </div>
             <div class="time-bar">
-                <div class="time-bar-label">Audit ergonomique</div>
-                <div class="bar-container">
-                    <div class="bar-fill" data-value="10"></div>
-                </div>
-                <div class="time-value">10h</div>
-            </div>
-            <div class="time-bar">
-                <div class="time-bar-label">Analyse des incohérences</div>
-                <div class="bar-container">
-                    <div class="bar-fill" data-value="5"></div>
-                </div>
-                <div class="time-value">5h</div>
-            </div>
-            <div class="time-bar">
-                <div class="time-bar-label">Nouvelle architecture de l’information</div>
+                <div class="time-bar-label">Charte de Signature Design de Blabla'Cube</div>
                 <div class="bar-container">
                     <div class="bar-fill" data-value="3"></div>
                 </div>
-                <div class="time-value">3h</div>
+                <div class="time-value">52h</div>
             </div>
             <div class="time-bar">
-                <div class="time-bar-label">A/B testing (estimation)</div>
+                <div class="time-bar-label">Itération et modélisation des assises</div>
                 <div class="bar-container">
-                    <div class="bar-fill" data-value="7"></div>
+                    <div class="bar-fill" data-value="3"></div>
                 </div>
-                <div class="time-value">7h</div>
+                <div class="time-value">53h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Itération et Prototypages successifs des cabines acoustique</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="6"></div>
+                </div>
+                <div class="time-value">105h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Itération et modélisation des mobiliers acoustiques</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="4"></div>
+                </div>
+                <div class="time-value">70h</div>
+            </div>
+            <div class="time-bar">
+                <div class="time-bar-label">Rendus finaux pour Catalogue</div>
+                <div class="bar-container">
+                    <div class="bar-fill" data-value="2"></div>
+                </div>
+                <div class="time-value">35h</div>
             </div>
         </div>
         <div id="roadmap" class="roadmap-container">
@@ -148,7 +155,7 @@
           
               <!-- Blocs tâches graphiques -->
               <div class="task animate color-blue" style="grid-column: 1 / 7; grid-row: 3;">Définition des parcours utilisateurs & besoins<br>(Comprendre les utilisateurs)</div>
-              <div class="task second animate color-blue" style="grid-column: 1 / 3; grid-row: 4;">Lecture docsn actuels</div>
+              <div class="task second animate color-blue" style="grid-column: 1 / 3; grid-row: 4;">Lecture docs actuels</div>
               <div class="task second animate color-blue" style="grid-column: 3 / 7; grid-row: 4;">Recherches complémentaires</div>
           
               <div class="task animate color-orange" style="grid-column: 1 / 3; grid-row: 5;">Analyse de la Signature design de Blabla'Cube</div>
@@ -184,11 +191,17 @@
 
             <div id="ux-content-observations" class="gallery collapsible-content open">
                 <div class="main-image">
+                    <button class="gallery-prev" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
+
                     <button class="zoom-trigger" aria-label="Zoomer l'image principale">
                         <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                     </button>
+
+                    <button class="gallery-next" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
+
                     <img src="../../img/BlablaCube-Analyse_1.png" alt="Schéma d'un parcours utilisateur d'une cabine Solo (actuelle) pour identifier las qualités et les points de friction (pain points) deans l'experience utilisateur."/>
                 </div>
+
                 <div class="thumbnails">
                     <button aria-label="Voir le schéma d'un parcours utilisateur d'une cabine acoustique actuelle" data-img="../../img/BlablaCube-Analyse_1.png" data-alt="Schéma d'un parcours utilisateur d'une cabine Solo (actuelle) pour identifier las qualités et les points de friction (pain points) deans l'experience utilisateur.">
                         <img src="../../img/BlablaCube-Analyse_1.png" alt="Aperçu réduit du schéma d'un parcours utilisateur" />
@@ -203,13 +216,28 @@
         <div id="modal" class="modal" aria-hidden="true">
             <div class="modal-content">
               <button id="closeModal" aria-label="Fermer"><i class="fas fa-times"></i></button>
+
+              <button id="modal-prev" aria-label="Image précédente" class="modal-nav">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+
+              <button id="modal-next" aria-label="Image suivante" class="modal-nav">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              
               <div class="zoom-container" id="zoomContainer">
                 <img id="zoomImg" />
                 <div class="mini-map" id="miniMap">
                   <img id="miniMapImg" />
                   <div class="view-rectangle" id="viewRectangle"></div>
                 </div>
-              </div>
+                <div class="modal-help" aria-hidden="true">
+                    <p>
+                      <kbd>⤢</kbd> Scroll pour zoomer &nbsp;·&nbsp;
+                      <kbd>←↑↓→</kbd> pour déplacer &nbsp;·&nbsp;
+                      <kbd>Échap</kbd> pour fermer
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -217,23 +245,58 @@
 
     <section id="pain_points" class="box-section">
         <h2>Les "Pain Points"</h2>
+        <h3 class="puce-circle">Cabines acoustiques</h3>
         <div class="container">
             <div class="card" tabindex="0">
-                <h4>Interface visuellement trop chargée</h4>
+                <h4>Coût de fabrication élevé</h4>
                 <div class="description">
-                    <p>L’abondance d’éléments visuels nuit à la hiérarchisation de l’information, rendant la navigation complexe et fatigante.</p>
+                    <p>Certaines cabines existantes étaient trop onéreuses à produire et peu accessibles pour les espaces de travail à budget limité.</p>
                 </div>
             </div>
             <div class="card" tabindex="0">
-                <h4>Dénominations peu compréhensibles</h4>
+                <h4>Montage complexe</h4>
                 <div class="description">
-                    <p>Certains libellés manquent de clarté ou utilisent un jargon anglais peu intuitif, ce qui freine la compréhension et l'accès rapide à l'information.</p>
+                    <p>Le système d’assemblage nécessitait souvent une main-d'œuvre qualifiée et du temps, freinant l’installation rapide sur site.</p>
                 </div>
             </div>
             <div class="card" tabindex="0">
-                <h4>Doublons dans les liens de navigation</h4>
+                <h4>Manque d’adaptabilité industrielle</h4>
                 <div class="description">
-                    <p>La redondance des liens vers les mêmes catégories crée de la confusion et allonge inutilement le parcours utilisateur.</p>
+                    <p>Les cabines n’étaient pas conçues pour les environnements exigeants comme les usines ou laboratoires, où l’hygiène, la ventilation et la robustesse sont essentiels.</p>
+                </div>
+            </div>
+            <div class="card" tabindex="0">
+                <h4>Encombrement logistique</h4>
+                <div class="description">
+                    <p>Le transport et la manutention des cabines représentaient un défi : poids élevé, volumes peu modulables, manque d’optimisation.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="puce-circle">Mobilier "Blabla'Coustique"</h3>
+        <div class="container">
+            <div class="card" tabindex="0">
+                <h4>Espaces peu modulables</h4>
+                <div class="description">
+                    <p>Les open-spaces et espaces de coworking souffrent régulièrement d’un manque de solutions pour structurer les zones de travail sans cloisonnement rigide.</p>
+                </div>
+            </div>
+            <div class="card" tabindex="0">
+                <h4>Faible polyvalence d’usage</h4>
+                <div class="description">
+                    <p>Le mobilier existant sur le marché ne répond pas toujours à la diversité des besoins : travail individuel, réunions informelles, appels ou pauses.</p>
+                </div>
+            </div>
+            <div class="card" tabindex="0">
+                <h4>Mauvaise absorption acoustique</h4>
+                <div class="description">
+                    <p>Les nuisances sonores sont trop souvent mal gérées dans les grands espaces, causant fatigue et baisse de concentration dans les zones de coworking.</p>
+                </div>
+            </div>
+            <div class="card" tabindex="0">
+                <h4>Esthétique trop technique</h4>
+                <div class="description">
+                    <p>Les meubles acoustiques du marché avaient souvent un aspect trop industriel ou froid, en décalage avec les ambiances accueillantes attendues.</p>
                 </div>
             </div>
         </div>
@@ -253,11 +316,17 @@
 
             <div id="Iteration-mobilier" class="gallery collapsible-content open">
                 <div class="main-image">
+                    <button class="gallery-prev" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
+
                     <button class="zoom-trigger" aria-label="Zoomer l'image principale">
                         <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                     </button>
+
+                    <button class="gallery-next" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
+
                     <img src="../../img/BlablaCube-Iteration_1.png" alt="Itération des banquettes pour meubler les cabines XL de manière mobile et modulaire. Ces assises sont aussi développé en prévision de la gamme de mobilier de co-working (Blabla'Coustique)"/>
                 </div>
+
                 <div class="thumbnails">
                     <button aria-label="Voir l'itération des banquettes" data-img="../../img/BlablaCube-Iteration_1.png" data-alt="Itération des banquettes pour meubler les cabines XL de manière mobile et modulaire. Ces assises sont aussi développé en prévision de la gamme de mobilier de co-working (Blabla'Coustique).">
                         <img src="../../img/BlablaCube-Iteration_1.png" alt="Aperçu réduit de l'itération des banquettes" />
@@ -290,14 +359,19 @@
 
             <div id="Iteration-Cabine" class="gallery collapsible-content open">
                 <div class="main-image">
+                    <button class="gallery-prev" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
+
                     <button class="zoom-trigger" aria-label="Zoomer l'image principale">
                         <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                     </button>
+
+                    <button class="gallery-next" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
 
                     <div class="image-container">
                         <img src="../../img/BlablaCube-Iteration_Cabines_1.png" alt="La nouvelle gamme Essentielle (cabines Solo, Duo et Quattro) : une gamme au prix plus abordable grâce aux économies de matières et de modes d'assemblage, offrant toujours un réel confort acoustique."/>
                     </div>
                 </div>
+
                 <div class="thumbnails">
                     <button aria-label="Voir les cabines de la gamme Essentielle" data-img="../../img/BlablaCube-Iteration_Cabines_1.png" data-alt="La nouvelle gamme Essentielle (cabines Solo, Duo et Quattro) : une gamme au prix plus abordable grâce aux économies de matières et de modes d'assemblage, offrant toujours un réel confort acoustique.">
                         <img src="../../img/BlablaCube-Iteration_Cabines_1.png" alt="Aperçu réduit des cabines de la gamme Essentielle" />
@@ -319,7 +393,7 @@
             <p>N’étant pas en mesure de présenter des photos des cabines montées et testées en atelier de production, voici les images des dernières modélisations 3D que nous avons prototypées et testées en interne. Les images ci-dessous sont des insertions des cabines Essentielle et Indus, réalisées pour leur présentation dans le catalogue de produits</p>
             
             <div class="collapsible-section">
-                <h3 class="collapsible-trigger">Vue d'insertion des derniers prototypes de cabines testés avant mon départ
+                <h3 class="puce-circle collapsible-trigger">Vue d'insertion des derniers prototypes de cabines testés avant mon départ
                     <button class="toggle-section" aria-expanded="true" aria-controls="testing-cabine">Lire moins
                         <i class="fas fa-chevron-up"aria-hidden="true"></i> 
                     </button>
@@ -327,11 +401,17 @@
     
                 <div id="testing-cabine" class="gallery collapsible-content open">
                     <div class="main-image">
+                        <button class="gallery-prev" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
+
                         <button class="zoom-trigger" aria-label="Zoomer l'image principale">
                             <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                         </button>
+
+                        <button class="gallery-next" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
+
                         <img src="../../img/BlablaCube-Solution_Cabines_1.png" alt="Vue d'insertion d'une cabine Essentielle Quattro dans un espace de coworking"/>
                     </div>
+                    
                     <div class="thumbnails">
                         <button aria-label="Voir la vue d'insertion d'une cabine Essentielle dans un espace de coworking" data-img="../../img/BlablaCube-Solution_Cabines_1.png" data-alt="Vue d'insertion d'une cabine Essentielle Quattro dans un espace de coworking">
                             <img src="../../img/BlablaCube-Solution_Cabines_1.png" alt="Aperçu réduit de l'insertion d'une cabine Essentielle en milieu de coworking" />
@@ -351,42 +431,54 @@
         <h2>Ma conclusion du projet</h2>
         <div>
             <div class="intro_conclusion">
-                <p>Ce projet d’audit ergonomique de l’interface Amazon a été une véritable exploration de l’interaction entre l’utilisateur et l’information, ainsi que le défi de rendre un site ultra-populaire plus intuitif, efficace et humain. Réorganiser la navigation et simplifier les parcours sans sacrifier la richesse de l’offre d'Amazon était l'occasion pour moi de tester ma capacité à anticiper les besoins des utilisateurs tout en respectant leurs habitudes et leurs conventions culturelles.</p>
+                <p>Ce projet m’a permis d’appliquer une démarche UX au cœur du design produit : écouter les besoins concrets des utilisateurs finaux, améliorer leur confort au quotidien, tout en tenant compte des contraintes de production et de logistique.<br>
+                En combinant réflexion fonctionnelle, esthétique et technique, j’ai pu concevoir des solutions cohérentes, accessibles et évolutives, adaptées aussi bien aux espaces collaboratifs qu’aux environnements industriels exigeants.</p>
 
                 <p></p>Voici les challenges relevés et ce que j'en retiens :</p>
             </div>
-            <ul class="container">
-                <div class="card"><li><h3>Réaliser un audit ergonomique</h3>
+            <div class="container">
+                <div class="card" tabindex="0">
+                    <h4>💡Concevoir pour mieux travailler</h4>
                     <div class="learn">
                         <ul>
-                            <li>Bien choisir/formuler les critères évalués</li>
-                            <li>Appliquer une certaine rigeur pour que l'audit soit le moins subjectif possible</li>
-                            <li>Détailler les commentaires de l'évaluation pour retranscrire les bons éléments et les points de frictions aux collaborateurs/clients</li>
-                            <li>Relativiser sur l'impact négatif d'un critère mal respecté, car tous ne sont pas des points de frictions</li>
+                            <li>Répondre aux besoins réels des utilisateurs en open-space et ateliers</li>
+                            <li>Intégrer confort acoustique, confidentialité et ergonomie dans des formats variés</li>
+                            <li>Apporter une flexibilité d’usage (collaboration, concentration, appels…)</li>
                         </ul>
-                    </div></li>
+                    </div>
                 </div>
-                <div class="card"><li><h3>Hierarchiser l'information</h3>
+                <div class="card" tabindex="0">
+                    <h4>🔧 Alléger, optimiser, simplifier</h4>
                     <div class="learn">
                         <ul>
-                            <li>Utiliser la loi de Miller ("7 ± 2") pour faciliter la compréhension et la mémorisation pour comparer des items</li>
-                            <li>Simplifier les choix pour l'utilisateur</li>
-                            <li>Limiter les catégories et sous-catégories de produits en 3 niveaux d'imbrications maximum</li>
-                            <li>Conserver la même hierarchie sur tout le site pour maintenir la cohérence</li>
+                            <li>Réduir les coûts de fabrication sans compromettre la qualité perçue</li>
+                            <li>Revoir les systèmes d’assemblage pour faciliter montage/démontage</li>
+                            <li>Prendre en compte des contraintes logistiques dès la conception</li>
                         </ul>
-                    </div></li>
+                    </div>
                 </div>
-                <div class="card"><li><h3>Communiquer avec les Utilisateurs (UX writing)</h3>
+                <div class="card" tabindex="0">
+                    <h4>🌱 Transformer la technique en expérience</h4>
                     <div class="learn">
                         <ul>
-                            <li>Utiliser un vocabulaire clair, des dénominations explicites qui utilisent les codes et conventions sémantiques de l'utilisateur</li>
-                            <li>Appliquer avec rigeur la cohérence des codes <i>(ex : "&" ou "et", mais d'alternance entre les deux)</i></li>
-                            
+                            <li>Exploiter l’expertise acoustique de l’entreprise pour enrichir l’usage</li>
+                            <li>Concevoir de mobiliers multifonctionnels (séparation, rangement, assise)</li>
+                            <li>Produir un design cohérent avec les environnements modernes, sobres mais chaleureux</li>
                         </ul>
-                    </div></li>
+                    </div>
+                </div>
+                <div class="card" tabindex="0">
+                    <h4>🕓 Apprendre à mieux travailler sur une période de temps plus dense</h4>
+                    <div class="learn">
+                        <ul>
+                            <li>M'adapter de manière fluide à la semaine de 4 jours, sans perte de qualité</li>
+                            <li>Observer une meilleure concentration, plus de clarté dans les priorités, et une productivité accrue</li>
+                            <li>Apprécier l'organisation du design par itérations courtes mais efficaces</li>
+                        </ul>
+                    </div>
                 </div>
                 
-            </ul>
+            </div>
         </div>
         <div>
             <img src="" alt="">
@@ -409,24 +501,25 @@
                 <div class="interagir">
                     <h2>Mon Résumé</h2>
                     
-                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025-light.pdf" download="ROUYER-Jean_CV_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">Télécharger mon CV<i class="fa-solid fa-file-pdf"></i>
+                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025.pdf" download="ROUYER-Jean_CV_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">Télécharger mon CV<i class="fa-solid fa-file-pdf"></i>
                     </a>
-                    <p><i>CV en PDF (interactif) : 712&nbsp;ko</i></p>
+                    <p><i>CV en PDF (interactif) : 677&nbsp;ko</i></p>
                     
-                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_Product-Designer_2025-light_recherche-Alternance.pdf" download="ROUYER-Jean_CV-Alternance_UX-UI-Designer_Product-Designer.pdf" class="btn btn-primary">CV pour Alternance<i class="fa-solid fa-file-pdf"></i>
+                    <a href="../../assets/doc/ROUYER-Jean_CV_UX-UI-Designer_2025_recherche-Alternance-en-contrat-d-aprentissage.pdf" download="ROUYER-Jean_CV-Alternance-en-Apprentissage_UX-UI-Designer.pdf" class="btn btn-primary">CV pour Alternance<i class="fa-solid fa-file-pdf"></i>
                     </a>
-                    <p><i>CV Alternance en PDF : 712&nbsp;ko</i></p>
+                    <p><i>CV Alternance en PDF : 681&nbsp;ko</i></p>
                 </div>
                 <div class="interagir">
                     <h2>Me joindre facilement</h2>
                     <a href="mailto:jeanrouyer24@gmail.com?subject=Visite%20de%20votre%20site&body=Bonjour%20Jean,%0D%0AJ%27ai%20visité%20votre%20site%20et%20je%20me%20permets%20de%20vous%20contacter%20concernant..." class="btn btn-primary" onclick="openMailInNewTab(event)">
                         Me contacter par mail<i class="fa-solid fa-paper-plane"></i>
                     </a>
-                    <div class="copy-info" onclick="copyEmail()">
+                    <button class="copy-info" onclick="copyEmail()" aria-label="Copier l'adresse email">
                         <span id="email-text">jeanrouyer24@gmail.com</span>
                         <i class="fa-solid fa-copy" aria-hidden="true"></i>
-                    </div>
-                    <span id="copy-feedback" class="sr-only">Adresse mail copiée</span>
+                      </button>
+                      
+                      <p id="copy-feedback" class="sr-only" aria-live="polite" role="status"></p>
                     <p><i>Prenez contact par mail pour toute demande de renseignements, ou toute réflexion sur votre projet.</i></p>
                 </div>
             </div>
